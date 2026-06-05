@@ -38,7 +38,7 @@ export default function LandingPage({
           <p className="text-xl text-gray-600 mb-16 leading-relaxed">
             Most aspiring Nail Techs waste $3K–$8K and 6+ months before realizing it
             wasn't the right move. Find out if you're truly career-fit—before
-            you enroll.
+            you invest in Nail School.
           </p>
 
           <button

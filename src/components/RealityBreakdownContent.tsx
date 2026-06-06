@@ -15,6 +15,24 @@ const REALITY_BREAKDOWN_CSS = `@import url('https://fonts.googleapis.com/css2?fa
       color: #1a1a2e;
       padding: 60px 24px 80px;
     }
+.reality-back-button {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 100;
+  border: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.92);
+  color: #be185d;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reality-back-button:hover {
+  background: #ffffff;
+}
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -1167,27 +1185,14 @@ export default function RealityBreakdownContent({
 
       <div className="reality-breakdown-content-page" onClick={handleContentClick}>
         {onBack && (
-          <button
-            type="button"
-            onClick={onBack}
-            style={{
-              position: "fixed",
-              top: 18,
-              left: 18,
-              zIndex: 1000,
-              border: "1px solid #e5e7eb",
-              background: "rgba(255, 255, 255, 0.92)",
-              color: "#be185d",
-              borderRadius: 999,
-              padding: "10px 16px",
-              fontWeight: 700,
-              cursor: "pointer",
-              boxShadow: "0 4px 18px rgba(0,0,0,0.08)",
-            }}
-          >
-            ← Back
-          </button>
-        )}
+  <button
+    type="button"
+    onClick={onBack}
+    className="reality-back-button"
+  >
+    ← Back
+  </button>
+)}
 
         <div dangerouslySetInnerHTML={{ __html: REALITY_BREAKDOWN_HTML }} />
       </div>

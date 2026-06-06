@@ -43,7 +43,8 @@ export default function LandingPage({
 
           <button
             onClick={onStartQuiz}
-            className="w-full h-14 text-lg rounded-lg text-white font-semibold bg-gradient-to-r from-pink-700 to-purple-700 hover:from-pink-700 hover:to-purple-700 mb-4"
+            className="w-full h-14 text-lg rounded-lg text-white font-semibold bg-gradient-to-r from-pink-700 to-purple-700
+             hover:from-pink-700 hover:to-purple-700 mb-4"
           >
             Start MyFree Quiz Now
           </button>
@@ -175,7 +176,7 @@ export default function LandingPage({
 
           <button
             onClick={onStartQuiz}
-            className="w-full h-14 text-lg rounded-lg text-white font-semibold bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 mb-4"
+            className="w-full h-14 text-lg rounded-lg text-white font-semibold bg-gradient-to-r from-pink-700 to-purple-700 hover:from-pink-700 hover:to-purple-700 mb-4"
           >
             Get My Free Results
           </button>

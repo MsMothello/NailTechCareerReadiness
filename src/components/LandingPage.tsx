@@ -43,8 +43,8 @@ export default function LandingPage({
 
           <button
             onClick={onStartQuiz}
-            className="w-full h-14 text-lg rounded-lg text-white font-semibold bg-gradient-to-r from-pink-700 to-purple-700
-             hover:from-pink-700 hover:to-purple-700 mb-4"
+            className="w-full h-14 text-lg rounded-lg text-white font-semibold bg-gradient-to-r from-pink-600 to-purple-600
+             hover:from-pink-600 hover:to-purple-600 mb-4"
           >
             Start MyFree Quiz Now
           </button>
@@ -62,7 +62,7 @@ export default function LandingPage({
         <div className="max-w-2xl mx-auto">
           <button
             onClick={onRealityBreakdown}
-            className="w-full bg-gradient-to-r from-pink-700 to-purple-700 hover:from-pink-700 hover:to-purple-700 text-white font-semibold py-4 rounded-lg transition-colors text-lg mb-1.5"
+            className="w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-600 hover:to-purple-600 text-white font-semibold py-4 rounded-lg transition-colors text-lg mb-1.5"
           >
             Access The Free Reality Breakdown
           </button>
@@ -176,7 +176,7 @@ export default function LandingPage({
 
           <button
             onClick={onStartQuiz}
-            className="w-full h-14 text-lg rounded-lg text-white font-semibold bg-gradient-to-r from-pink-700 to-purple-700 hover:from-pink-700 hover:to-purple-700 mb-4"
+            className="w-full h-14 text-lg rounded-lg text-white font-semibold bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-600 hover:to-purple-600 mb-4"
           >
             Get My Free Results
           </button>

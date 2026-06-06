@@ -641,7 +641,7 @@ const REALITY_BREAKDOWN_HTML = `<!-- ══ HERO ══ -->
         <div class="sub-section-title"><div class="dot" style="background:#f97316"></div><h3>Education Hours Required</h3></div>
         <ul>
           <li><div class="bullet" style="background:#f97316"></div>Most U.S. states: 300–600 cosmetology/nail hours</li>
-          <li><div class="bullet" style="background:#f97316"></div>Some states require a separate nail technician program</li>
+          <li><div class="bullet" style="background:#f97316"></div>New state? Approval required, extra training may apply</li>
           <li><div class="bullet" style="background:#f97316"></div>Program length: 3–12 months depending on state</li>
           <li><div class="bullet" style="background:#f97316"></div>Hours must be completed at an accredited school</li>
         </ul>

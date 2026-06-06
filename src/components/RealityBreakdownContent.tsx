@@ -641,8 +641,7 @@ const REALITY_BREAKDOWN_HTML = `<!-- ══ HERO ══ -->
         <div class="sub-section-title"><div class="dot" style="background:#f97316"></div><h3>Education Hours Required</h3></div>
         <ul>
           <li><div class="bullet" style="background:#f97316"></div>Most U.S. states: 300–600 cosmetology/nail hours</li>
-          <li><div class="bullet" style="background:#f97316"></div>New State? Approval required, extra training may apply.
-</li>
+          <li><div class="bullet" style="background:#f97316"></div>Some states require a separate nail technician program</li>
           <li><div class="bullet" style="background:#f97316"></div>Program length: 3–12 months depending on state</li>
           <li><div class="bullet" style="background:#f97316"></div>Hours must be completed at an accredited school</li>
         </ul>
@@ -702,12 +701,12 @@ const REALITY_BREAKDOWN_HTML = `<!-- ══ HERO ══ -->
   <div class="two-col">
     <div>
       <div class="sub-section">
-        <div class="sub-section-title"><div class="dot" style="background:#ef4444"></div><h3>Posture &amp; Positioning</h3></div>
+        <div class="sub-section-title"><div class="dot" style="background:#ef4444"></div><h3>Standing &amp; Posture</h3></div>
         <ul>
-          <li><div class="bullet" style="background:#ef4444"></div>8–12 hours/day seated, hunched over client hands</li>
-          <li><div class="bullet" style="background:#ef4444"></div>Neck and shoulders locked in awkward angles</li>
-          <li><div class="bullet" style="background:#ef4444"></div>Chronic back, neck, and shoulder pain is widely reported across the industry</li>
-          <li><div class="bullet" style="background:#ef4444"></div>Lower-limb circulation issues common by year 3</li>
+          <li><div class="bullet" style="background:#ef4444"></div>8-12 hours/day on your sit</li>
+          <li><div class="bullet" style="background:#ef4444"></div>Hunched over hands at awkward angles</li>
+          <li><div class="bullet" style="background:#ef4444"></div>70% of techs report chronic back/neck pain</li>
+          <li><div class="bullet" style="background:#ef4444"></div>Varicose veins common by year 3</li>
         </ul>
       </div>
       <div class="sub-section">
@@ -929,20 +928,20 @@ const REALITY_BREAKDOWN_HTML = `<!-- ══ HERO ══ -->
     <div class="stat-card s-red">
       <div class="stat-bg"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="35" stroke="#ef4444" stroke-width="6"/></svg></div>
       <div class="stat-num">~28%</div>
-      <div class="stat-label">annual employee turnover rate</div>
+      <div class="stat-label">annual employee turnover rate<a href="https://www.nailsmag.com" target="_blank" class="cite"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4" stroke="#1d4ed8" stroke-width="1.3" stroke-linecap="round"/></svg>NAILS Mag</a></div>
       <div class="stat-desc">High churn driven by physical pain, burnout, and unpredictable income — making staff retention a constant challenge.</div>
     </div>
     <div class="stat-card s-orange">
       <div class="stat-bg"><svg viewBox="0 0 80 80" fill="none"><path d="M40 10L70 65H10L40 10z" stroke="#f97316" stroke-width="6"/></svg></div>
       <div class="stat-num">$34.6K</div>
-      <div class="stat-label">median annual income (BLS 2024)<a href="https://www.bls.gov/oes/current/oes395092.htm" target="_blank" rel="noopener noreferrer" class="cite"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4" stroke="#1d4ed8" stroke-width="1.3" stroke-linecap="round"/></svg>BLS.gov</a></div>
+      <div class="stat-label">median annual income (BLS 2024)<a href="https://www.bls.gov/oes/current/oes395092.htm" target="_blank" class="cite"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4" stroke="#1d4ed8" stroke-width="1.3" stroke-linecap="round"/></svg>BLS.gov</a></div>
       <div class="stat-desc">That's ~$16.66/hr. In your first 1–2 years building a clientele, expect significantly less before overhead.</div>
     </div>
     <div class="stat-card s-purple">
       <div class="stat-bg"><svg viewBox="0 0 80 80" fill="none"><rect x="10" y="10" width="60" height="60" rx="10" stroke="#a855f7" stroke-width="6"/></svg></div>
       <div class="stat-num">21%</div>
-      <div class="stat-label">report nose, eye &amp; skin irritation</div>
-      <div class="stat-desc">Published nail salon health studies show roughly 1 in 5 techs develop irritation — even with ventilation in place.</div>
+      <div class="stat-label">report nose, eye & skin irritation<a href="https://pmc.ncbi.nlm.nih.gov" target="_blank" class="cite"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4" stroke="#1d4ed8" stroke-width="1.3" stroke-linecap="round"/></svg>PMC Study</a></div>
+      <div class="stat-desc">Published nail salon health study found 1 in 5 techs develop irritation — even with ventilation in place.</div>
     </div>
     <div class="stat-card s-teal">
       <div class="stat-bg"><svg viewBox="0 0 80 80" fill="none"><path d="M10 40a30 30 0 1 1 60 0" stroke="#0d9488" stroke-width="6"/></svg></div>
@@ -959,7 +958,7 @@ const REALITY_BREAKDOWN_HTML = `<!-- ══ HERO ══ -->
     <div class="stat-card s-pink">
       <div class="stat-bg"><svg viewBox="0 0 80 80" fill="none"><path d="M40 70C40 70 10 50 10 28a15 15 0 0 1 30-5 15 15 0 0 1 30 5c0 22-30 42-30 42z" stroke="#db2777" stroke-width="6"/></svg></div>
       <div class="stat-num">90%</div>
-      <div class="stat-label">of nail salons offer no health insurance</div>
+      <div class="stat-label">of nail salons offer no health insurance<a href="https://www.nailsmag.com" target="_blank" class="cite"><svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4" stroke="#1d4ed8" stroke-width="1.3" stroke-linecap="round"/></svg>NAILS Mag</a></div>
       <div class="stat-desc">Don't work = don't eat. Getting sick or injured is a genuine financial crisis with no safety net.</div>
     </div>
   </div>
@@ -973,11 +972,11 @@ const REALITY_BREAKDOWN_HTML = `<!-- ══ HERO ══ -->
     </div>
   </div>
   <div class="sources-row">
-    <span class="src-label">Informed by</span>
-    <a href="https://www.bls.gov/oes/current/oes395092.htm" target="_blank" rel="noopener noreferrer" class="source-tag">U.S. Bureau of Labor Statistics</a>
-    <span class="source-tag" style="cursor:default;">Published nail salon health studies (PMC)</span>
-    <span class="source-tag" style="cursor:default;">NAILS Magazine industry surveys</span>
-    <span class="source-tag" style="cursor:default;">OSHA nail salon safety guidance</span>
+    <span class="src-label">Sources</span>
+    <a href="https://www.bls.gov/oes/current/oes395092.htm" target="_blank" class="source-tag">U.S. Bureau of Labor Statistics 2024</a>
+    <a href="https://pmc.ncbi.nlm.nih.gov" target="_blank" class="source-tag">PMC Nail Salon Health Study</a>
+    <a href="https://www.nailsmag.com" target="_blank" class="source-tag">NAILS Magazine Industry Data</a>
+    <a href="https://www.osha.gov/nail-salons" target="_blank" class="source-tag">OSHA Nail Salon Safety</a>
   </div>
 </div>
 

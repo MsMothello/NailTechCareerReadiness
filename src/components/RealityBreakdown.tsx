@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { supabase } from '../lib/supabaseclient';
 import { Mail, ArrowLeft } from 'lucide-react';
 
@@ -80,6 +80,7 @@ export default function RealityBreakdown({ onBack, onSubmit, quizResults }: Real
       <div className="min-h-screen bg-gradient-to-b from-pink-50 to-purple-50 py-12 px-4">
         <div className="max-w-2xl mx-auto">
           <button
+            type="button"
             onClick={onBack}
             className="flex items-center gap-2 text-pink-600 hover:text-pink-700 mb-8 font-semibold"
           >
@@ -132,6 +133,7 @@ export default function RealityBreakdown({ onBack, onSubmit, quizResults }: Real
               </div>
 
               <button
+                type="button"
                 onClick={onBack}
                 className="w-full bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 rounded-lg transition-colors"
               >

@@ -704,7 +704,7 @@ const REALITY_BREAKDOWN_HTML = `<!-- ══ HERO ══ -->
         <div class="sub-section-title"><div class="dot" style="background:#ef4444"></div><h3>Standing &amp; Posture</h3></div>
         <ul>
           <li><div class="bullet" style="background:#ef4444"></div>8-12 hours/day on your sit</li>
-          <li><div class="bullet" style="background:#ef4444"></div>Hunched over hands at awkward angles</li>
+          <li><div class="bullet" style="background:#ef4444"></div>Hunched over with hands at awkward angles</li>
           <li><div class="bullet" style="background:#ef4444"></div>70% of techs report chronic back/neck pain</li>
           <li><div class="bullet" style="background:#ef4444"></div>Varicose veins common by year 3</li>
         </ul>

@@ -591,14 +591,14 @@ function getHeadline(sectionResults, overallPct) {
     businessAcumen_clientRelations:  "You'd be brilliant with clients. The business side would bury you.",
     businessAcumen_realityCheck:     "You understand what you're signing up for. You just can't afford it yet.",
     physicalDemands_businessAcumen:  "The financial groundwork is solid. Your body and habits need attention.",
-    physicalDemands_clientRelations:  "Strong business instincts. The physical demands are your real question mark.",
+    physicalDemands_clientRelations:  "Your instincts with clients are strong. The physical demands are your real question mark.",
     physicalDemands_realityCheck:    "Your expectations are grounded. Your physical readiness needs work.",
     clientRelations_businessAcumen:  "You know how to run a business. Building real client relationships is the challenge.",
-    clientRelations_physicalDemands: "Your people skills are an asset. Physical sustainability is the question.",
-    clientRelations_realityCheck:    "You'd connect well with clients. Your picture of the career needs grounding.",
-    realityCheck_businessAcumen:    "You see this career clearly. The business preparation hasn't caught up.",
-    realityCheck_physicalDemands:   "Financially prepared and clear-eyed. Physical readiness is the gap to close.",
-    realityCheck_clientRelations:   "Your understanding of the career is solid. Client dynamics need more work.",
+    clientRelations_physicalDemands: "Physically you're built for this. Client relationships are the real challenge.",
+    clientRelations_realityCheck:    "You see the career clearly. Client dynamics are where you'd struggle.",
+    realityCheck_businessAcumen:    "Your financial preparation is solid. Your picture of the career needs grounding.",
+    realityCheck_physicalDemands:   "Your body's ready for the demands. Your expectations need grounding.",
+    realityCheck_clientRelations:   "You'd connect well with clients. Your picture of the career needs grounding.",
   };
 
   const key = `${worst.id}_${best.id}`;

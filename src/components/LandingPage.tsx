@@ -122,7 +122,7 @@ export default function LandingPage({
           </div>
 
           <p className="text-center text-gray-600 mb-8">
-            After completing the 2-minute quiz:
+            After completing the 90 seconds quiz:
           </p>
 
           <div className="space-y-4 mb-8">

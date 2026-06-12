@@ -36,7 +36,7 @@ export default function LandingPage({
           </h1>
 
           <p className="text-xl text-gray-600 mb-16 leading-relaxed">
-            Most aspiring Nail Techs waste $3K–$8K and 6+ months before realizing it
+            Most aspiring Nail Technicians waste $3K–$8K and 6+ months before realizing it
             wasn't the right move. Find out if you're truly career-fit—before
             you invest in Nail School.
           </p>
@@ -46,11 +46,11 @@ export default function LandingPage({
             className="w-full h-14 text-lg rounded-lg text-white font-semibold bg-gradient-to-r from-pink-600 to-purple-600
              hover:from-pink-600 hover:to-purple-600 mb-4"
           >
-            Start MyFree Quiz Now
+            Start My Free Quiz Now
           </button>
 
           <p className="text-sm text-gray-500 mb-2">
-            Get instant results + personalized roadmap
+            Get instant results + The Nail School Preview
           </p>
           <p className="text-sm text-gray-500 mb-6">
             100% free • No credit card • Results in 90 seconds
@@ -58,7 +58,7 @@ export default function LandingPage({
         </div>
       </section>
 
-      <section className="py-1 px-4 bg-gradient-to-r from-pink-50 to-purple-50">
+      <section className="py-1 px-4">
         <div className="max-w-2xl mx-auto">
           <button
             onClick={onRealityBreakdown}
@@ -67,7 +67,7 @@ export default function LandingPage({
             Access The Free Reality Breakdown
           </button>
           <p className="text-center text-gray-600 text-sm mb-2">
-            Get the truth about nail school before taking the full quiz
+            A Snapshot of the Brutal truth about a Career in Nail Technology
           </p>
         </div>
       </section>
@@ -75,13 +75,13 @@ export default function LandingPage({
       <section className="py-4 px-4 bg-gray-50">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl md:text-3xl mb-3 text-center">
-            The Hard Truth About Nail School
+            The Hard Truth About Nail Tech Life
           </h2>
 
           <div className="space-y-2 mb-8">
             <div className="bg-white p-5 rounded-lg border-l-4 border-red-400">
               <p className="text-gray-700">
-                <span className="font-semibold">38% of students drop out</span>{" "}
+                <span className="font-semibold">38% of students drop out of Nail School </span>{" "}
                 before finishing their license hours
               </p>
             </div>
@@ -102,13 +102,15 @@ export default function LandingPage({
               </p>
             </div>
           </div>
-
-          <p className="text-center text-lg text-gray-700 mb-3">
-            This isn't about scaring you. It's about making sure you go in{" "}
-            <span className="font-semibold">prepared to win</span>.
-          </p>
         </div>
       </section>
+
+      <div className="py-6 px-4">
+        <p className="text-center text-xl text-gray-700 max-w-2xl mx-auto">
+          This isn't about scaring you. It's about making sure you go in{" "}
+          <span className="font-semibold">prepared to Win</span>.
+        </p>
+      </div>
 
       <section className="py-12 px-4">
         <div className="max-w-2xl mx-auto">
@@ -131,7 +133,7 @@ export default function LandingPage({
                   Your Career Fitness Score
                 </h3>
                 <p className="text-gray-600">
-                  Find out if you're in the Ready, Almost Ready, or Not Yet zone
+                  Find out if you're in the Ready, Almost Ready, or Not Yet Ready zone
                 </p>
               </div>
             </div>
@@ -143,7 +145,7 @@ export default function LandingPage({
                   BONUS: Personalized Next Steps
                 </h3>
                 <p className="text-gray-700">
-                  Custom action plan based on YOUR situation, not generic advice
+                  A Recommendation Based on Your Unique Situation to Help You Get Started
                 </p>
               </div>
             </div>
@@ -152,7 +154,7 @@ export default function LandingPage({
               <Gift className="w-6 h-6 text-pink-600 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg mb-1 text-pink-900">
-                  BONUS: Master Nail Technician Training Curriculum
+                  BONUS: The Complete Nail School Preview
                 </h3>
                 <p className="text-gray-700">
                   Know exactly what to expect in nail school before your first day

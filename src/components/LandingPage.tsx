@@ -262,14 +262,31 @@ export default function LandingPage({
           </h2>
 
           <p className="text-xl mb-8 text-purple-100">
-            2 minutes now could save you thousands of dollars and months of
+            90 Seconds now could save you thousands of dollars and months of
             uncertainty.
           </p>
 
+          <style>{`
+            @keyframes ctaGlowBlink {
+              0%, 100% {
+                box-shadow: inset 0 0 14px 2px rgba(244, 114, 182, 0.55),
+                  inset 0 0 28px 6px rgba(236, 72, 153, 0.35);
+              }
+              50% {
+                box-shadow: inset 0 0 22px 6px rgba(244, 114, 182, 0.9),
+                  inset 0 0 45px 14px rgba(236, 72, 153, 0.65);
+              }
+            }
+          `}</style>
           <button
             onClick={onStartQuiz}
-            className="w-full h-14 text-lg rounded-lg bg-white mb-6 active:scale-95 transition-transform font-semibold"
-            style={{ color: "#A78BCC" }}
+            className="w-full h-14 text-lg rounded-lg mb-6 active:scale-95 transition-transform font-bold"
+            style={{
+              color: "#BE185D",
+              background:
+                "linear-gradient(135deg, #FBCFE8 0%, #F9A8D4 50%, #FBCFE8 100%)",
+              animation: "ctaGlowBlink 1.6s ease-in-out infinite",
+            }}
           >
             Begin My Nail Tech Journey
           </button>

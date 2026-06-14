@@ -724,9 +724,9 @@ function getCTA(worstSection, overallPct) {
 
 // ── BANDS — minimal, logic only ───────────────────────────────────────────────
 const BANDS = {
-  strong:     { label: "Strong Foundation",     sub: "Ready to take the next step",        minScore: 37, color: "#4A148C", bg: "#EDE7F6" },
-  developing: { label: "Developing Foundation", sub: "Targeted preparation recommended",   minScore: 25, color: "#880E4F", bg: "#FCE4EC" },
-  gaps:       { label: "Significant Gaps",      sub: "Important groundwork needed first",  minScore: 0,  color: "#6A1B9A", bg: "#F3E5F5" },
+  strong:     { label: "Ready",          sub: "Ready to take the next step",        minPct: 75, color: "#4A148C", bg: "#EDE7F6" },
+  developing: { label: "Almost Ready",   sub: "Targeted preparation recommended",   minPct: 50, color: "#880E4F", bg: "#FCE4EC" },
+  gaps:       { label: "Not Yet Ready",  sub: "Important groundwork needed first",  minPct: 0,  color: "#6A1B9A", bg: "#F3E5F5" },
 };
 
 const SECTION_BANDS = [
@@ -769,8 +769,8 @@ function calcResults(questions, answers) {
   const pct        = totalMax > 0 ? Math.round((totalScore / totalMax) * 100) : 0;
 
   let band = BANDS.strong;
-  if (totalScore < BANDS.developing.minScore) band = BANDS.gaps;
-  else if (totalScore < BANDS.strong.minScore) band = BANDS.developing;
+  if (pct < BANDS.developing.minPct) band = BANDS.gaps;
+  else if (pct < BANDS.strong.minPct) band = BANDS.developing;
   if (triggeredFlags.some(f => f.level === "critical")) {
     if (band === BANDS.strong) band = BANDS.developing;
     else if (band === BANDS.developing) band = BANDS.gaps;
@@ -891,6 +891,30 @@ const CSS = `
   @media(max-width:480px){.res-top,.res-body{padding-left:20px;padding-right:20px}.q-header,.q-body,.q-footer{padding-left:20px;padding-right:20px}.q-text{font-size:17px}.res-score-circle{width:58px;height:58px}.res-headline{font-size:18px}}
 `;
 
+// ── RECOMMENDED NEXT STEPS — per worst section (shared with detailed report) ───
+export const NEXT_STEPS = {
+  businessAcumen: [
+    "Build your exact ramp-up financial plan — monthly expenses vs. realistic client income month by month for 18 months",
+    "Calculate your true service price: product cost + overhead + hourly target = your real minimum",
+    "Write and practise your no-show, late, and deposit policy scripts out loud before your first client",
+  ],
+  realityCheck: [
+    "Find two working nail techs — not influencers — and ask them what a typical Tuesday actually looks like",
+    "Research the specific licensing requirements in your state or country directly from the licensing authority",
+    "Map your exact enrolment timeline: school start date, financial readiness date, and life circumstances to resolve first",
+  ],
+  clientRelations: [
+    "Practise policy enforcement conversations out loud — write the exact words you'd use and say them to yourself",
+    "Shadow or speak with a working nail tech specifically about their most difficult client situations",
+    "Identify your personal emotional triggers and build a 2-minute reset habit for between appointments",
+  ],
+  physicalDemands: [
+    "Speak with a doctor specifically about this career's chemical and physical demands before committing financially",
+    "Research ergonomic workstation setups used by nail techs — invest in the setup before the career, not after the injury",
+    "Build your PPE habit now — mask, ventilation awareness, glove tolerance — before school, not during it",
+  ],
+};
+
 // ── COMPONENTS ────────────────────────────────────────────────────────────────
 function QuestionScreen({ question, index, total, answer, onAnswer, onNext }) {
   const pct = (index / total) * 100;
@@ -925,35 +949,12 @@ function QuestionScreen({ question, index, total, answer, onAnswer, onNext }) {
   );
 }
 
-function ResultsScreen({ results, onRetake, onRequestRealityBreakdown, onRequestBlueprint }) {
+function ResultsScreen({ results, onRetake, onRequestRealityBreakdown, onRequestBlueprint, onRequestDetailedReport }) {
   const { pct, band, sectionResults, triggeredFlags, worstSection, bestSection, headline, diagnostic, cta } = results;
   const critFlags = triggeredFlags.filter(f=>f.level==="critical");
   const advFlags  = triggeredFlags.filter(f=>f.level==="advisory");
 
-  const nextSteps = {
-    businessAcumen: [
-      "Build your exact ramp-up financial plan — monthly expenses vs. realistic client income month by month for 18 months",
-      "Calculate your true service price: product cost + overhead + hourly target = your real minimum",
-      "Write and practise your no-show, late, and deposit policy scripts out loud before your first client",
-    ],
-    realityCheck: [
-      "Find two working nail techs — not influencers — and ask them what a typical Tuesday actually looks like",
-      "Research the specific licensing requirements in your state or country directly from the licensing authority",
-      "Map your exact enrolment timeline: school start date, financial readiness date, and life circumstances to resolve first",
-    ],
-    clientRelations: [
-      "Practise policy enforcement conversations out loud — write the exact words you'd use and say them to yourself",
-      "Shadow or speak with a working nail tech specifically about their most difficult client situations",
-      "Identify your personal emotional triggers and build a 2-minute reset habit for between appointments",
-    ],
-    physicalDemands: [
-      "Speak with a doctor specifically about this career's chemical and physical demands before committing financially",
-      "Research ergonomic workstation setups used by nail techs — invest in the setup before the career, not after the injury",
-      "Build your PPE habit now — mask, ventilation awareness, glove tolerance — before school, not during it",
-    ],
-  };
-
-  const steps = nextSteps[worstSection.id] || nextSteps.businessAcumen;
+  const steps = NEXT_STEPS[worstSection.id] || NEXT_STEPS.businessAcumen;
 
   return (
     <div className="card">
@@ -1063,6 +1064,9 @@ function ResultsScreen({ results, onRetake, onRequestRealityBreakdown, onRequest
             <span className="cta-divider-txt">or</span>
             <div className="cta-divider-line"/>
           </div>
+          <button className="cta-btn-secondary" onClick={() => onRequestDetailedReport(results)}>
+            Get a Detailed Report →
+          </button>
           <button className="cta-btn-secondary" onClick={onRequestBlueprint}>
             Get The Nail Tech Success Blueprint →
           </button>
@@ -1088,9 +1092,11 @@ function ResultsScreen({ results, onRetake, onRequestRealityBreakdown, onRequest
 export default function Quiz({
   onRequestRealityBreakdown,
   onRequestBlueprint,
+  onRequestDetailedReport,
 }: {
   onRequestRealityBreakdown?: (results?: unknown) => void;
   onRequestBlueprint?: () => void;
+  onRequestDetailedReport?: (results?: unknown) => void;
 }) {
   const [screen,    setScreen]   = useState("quiz");
   const [questions, setQuestions]= useState(()=>buildQuiz());
@@ -1118,6 +1124,7 @@ export default function Quiz({
   onRetake={retake}
   onRequestRealityBreakdown={onRequestRealityBreakdown}
   onRequestBlueprint={onRequestBlueprint}
+  onRequestDetailedReport={onRequestDetailedReport}
 />
         )}
       </div>

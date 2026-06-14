@@ -8,6 +8,7 @@ const RealityBreakdownContent = lazy(
   () => import("./components/RealityBreakdownContent")
 );
 const NailTechBlueprint = lazy(() => import("./components/NailTechBlueprint"));
+const DetailedReport = lazy(() => import("./components/DetailedReport"));
 
 const getDailyRandomNumber = (min: number, max: number): number => {
   const today = new Date();
@@ -34,18 +35,36 @@ type Stage =
   | "quiz"
   | "email-gate"
   | "reality-breakdown-content"
+  | "detailed-report"
   | "blueprint";
 
-type QuizResultSummary = {
+type EmailGateTarget = "reality-breakdown" | "detailed-report";
+
+type SectionResult = {
+  id: string;
+  title: string;
+  color: string;
   pct: number;
-  band: { label: string };
-  worstSection: { id: string; title: string };
-  bestSection: { id: string; title: string; pct: number };
+  band: { label: string; color: string; bg: string };
+  insight: { title: string; body: string };
+};
+
+type QuizResults = {
+  pct: number;
+  band: { label: string; sub: string; color: string; bg: string };
+  headline: string;
+  diagnostic: string[];
+  sectionResults: SectionResult[];
+  triggeredFlags: { code: string; level: string; message: string; remedy: string[] }[];
+  bestSection: SectionResult;
+  worstSection: SectionResult;
 };
 
 export default function App() {
   const [stage, setStage] = useState<Stage>("landing");
-  const [quizResults, setQuizResults] = useState<QuizResultSummary | null>(null);
+  const [quizResults, setQuizResults] = useState<QuizResults | null>(null);
+  const [emailGateTarget, setEmailGateTarget] = useState<EmailGateTarget>("reality-breakdown");
+  const [submittedEmail, setSubmittedEmail] = useState<string | null>(null);
 
   const [takenToday, setTakenToday] = useState(() => {
     const stored = localStorage.getItem("quizTakenToday");
@@ -81,7 +100,14 @@ export default function App() {
   };
 
   const handleAccessRealityBreakdown = (results?: unknown) => {
-    setQuizResults((results as QuizResultSummary) || null);
+    setQuizResults((results as QuizResults) || null);
+    setEmailGateTarget("reality-breakdown");
+    setStage("email-gate");
+  };
+
+  const handleRequestDetailedReport = (results?: unknown) => {
+    setQuizResults((results as QuizResults) || null);
+    setEmailGateTarget("detailed-report");
     setStage("email-gate");
   };
 
@@ -94,8 +120,12 @@ export default function App() {
   };
 
   const handleEmailSubmit = (email: string) => {
-    void email;
-    setStage("reality-breakdown-content");
+    setSubmittedEmail(email);
+    setStage(
+      emailGateTarget === "detailed-report"
+        ? "detailed-report"
+        : "reality-breakdown-content"
+    );
   };
 
   if (stage === "quiz") {
@@ -103,6 +133,7 @@ export default function App() {
       <Quiz
         onRequestRealityBreakdown={handleAccessRealityBreakdown}
         onRequestBlueprint={handleBlueprintAccess}
+        onRequestDetailedReport={handleRequestDetailedReport}
       />
     );
   }
@@ -140,6 +171,26 @@ export default function App() {
           <RealityBreakdownContent
             onBack={handleBackToLanding}
             onTakeQuiz={handleStartQuiz}
+          />
+        </Suspense>
+      </ErrorBoundary>
+    );
+  }
+
+  if (stage === "detailed-report") {
+    return (
+      <ErrorBoundary>
+        <Suspense
+          fallback={
+            <div style={{ padding: "40px", fontSize: "24px" }}>
+              Loading your detailed report...
+            </div>
+          }
+        >
+          <DetailedReport
+            results={quizResults}
+            email={submittedEmail}
+            onBack={handleBackToLanding}
           />
         </Suspense>
       </ErrorBoundary>

@@ -17,16 +17,7 @@ export default function LandingPage({
     <div className="min-h-screen bg-white">
 
 <section className="bg-gradient-to-b from-pink-50 to-white py-16 md:py-20 px-4 relative overflow-hidden">
-  {/* Background Image */}
-  <div className="absolute inset-0 z-0">
-    <img
-      src="https://images.unsplash.com/photo-1659391542239-9648f307c0b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYWlsJTIwdGVjaG5pY2lhbiUyMG1hbmljdXJlJTIwc2Fsb258ZW58MXx8fHwxNzcwOTI0Mjc0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-      alt="Nail technician at work"
-      className="w-full h-full object-cover opacity-10"
-    />
-    <div className="absolute inset-0 bg-gradient-to-b from-pink-50/95 via-white/95 to-white"></div>
-  </div>
-
+ 
   {/* Hero Content */}
   <div className="max-w-6xl mx-auto relative z-10">
     <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -115,8 +106,8 @@ export default function LandingPage({
 
           <div className="rounded-3xl overflow-hidden shadow-2xl bg-white">
             <img
-              src="https://images.unsplash.com/photo-1659391542239-9648f307c0b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYWlsJTIwdGVjaG5pY2lhbiUyMG1hbmljdXJlJTIwc2Fsb258ZW58MXx8fHwxNzcwOTI0Mjc0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Professional nail technician providing a manicure"
+src="/hero-nail-tech.png"         
+     alt="Professional nail technician providing a manicure"
               className="w-full h-[420px] object-cover"
             />
           </div>

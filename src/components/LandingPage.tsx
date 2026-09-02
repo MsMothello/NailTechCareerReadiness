@@ -164,7 +164,7 @@ export default function LandingPage({
             The Reality of Becoming a Nail Tech
           </h2>
           <h3 className="text-xl text-gray-600 mb-6 text-center">
-  A quick snapshot of what most people don't learn until they're already in it.
+  A quick snapshot of the hidden truths of nail tech life—from emotional labor and licensing requirements to lifestyle impact and physical demands—before you commit to nail school.
 </h3>
 
           <div className="space-y-2 mb-8">
@@ -194,6 +194,10 @@ export default function LandingPage({
         </div>
       </section>
 
+      <p className="text-center text-lg text-gray-700 font-medium mb-4">
+  This isn't about scaring you. It's about making sure you go in prepared to Win.
+</p>
+
       <section className="py-1 px-4">
         <div className="max-w-2xl mx-auto">
           <button
@@ -207,7 +211,7 @@ export default function LandingPage({
 
       <div className="py-6 px-4">
   <p className="text-center text-xl text-gray-700 max-w-2xl mx-auto">
-    Discover the hidden realities of nail tech life—from emotional labor and
+    Discover the hidden truths about nail tech life—from emotional labor and
     licensing requirements to lifestyle impact and physical demands—before you
     commit to nail school.
   </p>
@@ -215,9 +219,9 @@ export default function LandingPage({
   <div className="text-center mt-4">
     <a
       href="/reality-breakdown"
-      className="text-purple-100/70 font-semibold hover:text-white transition-colors"
+   className="font-semibold text-pink-600 transition-opacity duration-1000 animate-pulse"
     >
-      ACCESS FREE REALITY BREAKDOWN →
+    FREE REALITY BREAKDOWN →
     </a>
   </div>
 </div>
@@ -313,46 +317,45 @@ export default function LandingPage({
       </section>
 
       <section className="py-16 px-4 bg-gradient-to-b from-purple-600 to-pink-600 text-white">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl mb-4">
-            Get Clarity Before You Commit
-          </h2>
+  <div className="max-w-xl mx-auto text-center">
+    <h2 className="text-3xl md:text-4xl mb-4">
+      Get Clarity Before You Commit
+    </h2>
 
-          <p className="text-xl mb-8 text-purple-100">
-            90 Seconds now could save you thousands of dollars and months of
-            uncertainty.
-          </p>
+    <p className="text-xl mb-8 text-purple-100">
+      90 Seconds now could save you thousands of dollars and months of
+      uncertainty.
+    </p>
 
-          <style>{`
-            @keyframes ctaGlowBlink {
-              0%, 100% {
-                box-shadow: inset 0 0 14px 2px rgba(244, 114, 182, 0.55),
-                  inset 0 0 28px 6px rgba(236, 72, 153, 0.35);
-              }
-              50% {
-                box-shadow: inset 0 0 22px 6px rgba(244, 114, 182, 0.9),
-                  inset 0 0 45px 14px rgba(236, 72, 153, 0.65);
-              }
-            }
-          `}</style>
-          <button
-            onClick={onStartQuiz}
-            className="w-full h-14 text-lg rounded-lg mb-6 active:scale-95 transition-transform font-bold"
-            style={{
-              color: "#BE185D",
-              background:
-                "linear-gradient(135deg, #FBCFE8 0%, #F9A8D4 50%, #FBCFE8 100%)",
-              animation: "ctaGlowBlink 1.6s ease-in-out infinite",
-            }}
-          >
-            Begin My Nail Tech Journey
-          </button>
+    <style>{`
+      @keyframes textPulse {
+        0%, 100% {
+          opacity: 0.70;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    `}</style>
 
-          <p className="text-lg text-purple-100">
-            Join 12,000+ people who took control of their Nail Techcareer
-          </p>
-        </div>
-      </section>
+    <button
+      onClick={onStartQuiz}
+      className="w-full h-14 text-lg rounded-lg mb-6 font-bold active:scale-95 transition-transform"
+      style={{
+        color: "#BE185D",
+        background:
+          "linear-gradient(135deg, #FBCFE8 0%, #F9A8D4 50%, #FBCFE8 100%)",
+        animation: "textPulse 1.6s ease-in-out infinite",
+      }}
+    >
+      Begin My Nail Tech Journey
+    </button>
+
+    <p className="text-lg text-purple-100">
+      Join 12,000+ people who took control of their Nail Tech career
+    </p>
+  </div>
+</section>
 
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg md:hidden z-50">
         <button

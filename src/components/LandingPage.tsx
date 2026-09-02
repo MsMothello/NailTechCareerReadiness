@@ -28,7 +28,7 @@ export default function LandingPage({
         {/* Quiz Badge */}
         <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
           <Clock className="w-4 h-4" />
-          90-second quiz • {takenToday} taken today
+          12 Questions • 90-second Quiz • {takenToday} taken today
         </div>
 
         {/* Headline */}
@@ -65,7 +65,7 @@ export default function LandingPage({
               ✓
             </div>
             <span className="text-gray-700">
-              Discover your next career steps
+              Know your next steps
             </span>
           </div>
 
@@ -89,7 +89,7 @@ export default function LandingPage({
         </button>
 
         {/* Trust / Reassurance */}
-        <div className="mt-5 flex flex-col sm:flex-row items-center md:items-start gap-2 sm:gap-4 text-sm text-gray-500">
+        <div className="mt-2 flex flex-col sm:flex-row items-center md:items-start gap-2 sm:gap-4 text-sm text-gray-500">
           <span>✓ 100% free</span>
           <span>✓ No credit card required</span>
           <span>✓ Results in 90 seconds</span>
@@ -155,10 +155,10 @@ src="/hero-nail-tech.png"
             The Reality of Becoming a Nail Tech
           </h2>
           <h3 className="text-xl text-gray-600 mb-6 text-center">
-A quick snapshot of the hard truths most people don't discover until they've committed to nail school—or sometimes even afterward.
+A quick snapshot of the hard truths most people don't discover until they've committed to nail school—or sometimes even afterwards.
 </h3>
 
-          <div className="space-y-2 mb-8">
+          <div className="space-y-1 mb-6">
             <div className="bg-white p-5 rounded-lg border-l-4 border-red-400">
               <p className="text-gray-700">
                 <span className="font-semibold">38% of students drop out of Nail School </span>{" "}
@@ -185,7 +185,12 @@ A quick snapshot of the hard truths most people don't discover until they've com
         </div>
       </section>
 
-      <section className="py-1 px-4">
+       <div className="py-6 px-4">
+  <p className="text-center text-xl text-gray-700 max-w-2xl mx-auto">
+    This isn't about scaring you. It's about making sure you go in prepared to WIN.
+  </p>
+
+        <section className="py-1 px-4 mt-6">
         <div className="max-w-2xl mx-auto">
           <button
             onClick={onRealityBreakdown}
@@ -194,89 +199,76 @@ A quick snapshot of the hard truths most people don't discover until they've com
             Access The Free Reality Breakdown
           </button>
         </div>
-      </section>
+</section>
 
-      <div className="py-6 px-4">
-  <p className="text-center text-xl text-gray-700 max-w-2xl mx-auto">
-    This isn't about scaring you. It's about making sure you go in prepared to WIN.
-  </p>
-
-  <div className="text-center mt-4">
-    <a
-      href="/reality-breakdown"
-   className="font-semibold text-pink-600 transition-opacity duration-1000 animate-pulse"
-    >
-    FREE REALITY BREAKDOWN →
-    </a>
-  </div>
-</div>
-
-<section className="py-12 px-4 bg-white">
+<section className="py-12 px-4 mb-8 bg-white">
   <div className="max-w-3xl mx-auto bg-gradient-to-b from-pink-50 to-purple-50 rounded-lg px-6 py-8">
-    <div className="max-w-4xl mx-auto"></div>  
-    <h3 className="text-center text-xl mb-8 text-gray-600">
-      What Others Are Saying
-    </h3>
+    
+    <div className="max-w-2xl mx-auto">
+      
+      <h3 className="text-center text-xl mb-8 text-gray-600">
+        What Others Are Saying
+      </h3>
 
-    <div className="space-y-6">
+      <div className="space-y-6">
 
-      <div className="bg-gray-50 p-6 rounded-lg">
-        <div className="flex gap-1 mb-3">
-          {[...Array(5)].map((_, i) => (
-            <span key={i} className="text-yellow-400">
-              ★
-            </span>
-          ))}
+        <div className="bg-gray-50 p-3 rounded-lg">
+          <div className="flex gap-1 mb-3">
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className="text-yellow-400">
+                ★
+              </span>
+            ))}
+          </div>
+
+          <p className="text-gray-700 mb-3">
+            "This literally saved me from making a $5K mistake. I thought I
+            was ready but the quiz showed me I needed to save more first."
+          </p>
+
+          <p className="text-sm font-medium">
+            — Jasmine, 23, Atlanta
+          </p>
         </div>
 
-        <p className="text-gray-700 mb-3">
-          "This literally saved me from making a $5K mistake. I thought I
-          was ready but the quiz showed me I needed to save more first."
-        </p>
+        <div className="bg-gray-50 p-3 rounded-lg">
+          <div className="flex gap-1 mb-3">
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className="text-yellow-400">
+                ★
+              </span>
+            ))}
+          </div>
 
-        <p className="text-sm font-medium">
-          — Jasmine, 23, Atlanta
-        </p>
-      </div>
+          <p className="text-gray-700 mb-3">
+            "I scored Ready and it gave me so much confidence. Enrolled 2
+            weeks later and I'm so glad I went for it."
+          </p>
 
-      <div className="bg-gray-50 p-6 rounded-lg">
-        <div className="flex gap-1 mb-3">
-          {[...Array(5)].map((_, i) => (
-            <span key={i} className="text-yellow-400">
-              ★
-            </span>
-          ))}
+          <p className="text-sm font-medium">
+            — Maria, 26, Houston
+          </p>
         </div>
 
-        <p className="text-gray-700 mb-3">
-          "I scored Ready and it gave me so much confidence. Enrolled 2
-          weeks later and I'm so glad I went for it."
-        </p>
+        <div className="bg-gray-50 p-3 rounded-lg">
+          <div className="flex gap-1 mb-3">
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className="text-yellow-400">
+                ★
+              </span>
+            ))}
+          </div>
 
-        <p className="text-sm font-medium">
-          — Maria, 26, Houston
-        </p>
-      </div>
+          <p className="text-gray-700 mb-3">
+            "Honestly didn't expect much from a free quiz but wow. Knowing
+            the real costs upfront changed everything for me."
+          </p>
 
-      <div className="bg-gray-50 p-6 rounded-lg">
-        <div className="flex gap-1 mb-3">
-          {[...Array(5)].map((_, i) => (
-            <span key={i} className="text-yellow-400">
-              ★
-            </span>
-          ))}
+          <p className="text-sm font-medium">
+            — Keyanna, 21, Phoenix
+          </p>
         </div>
-
-        <p className="text-gray-700 mb-3">
-          "Honestly didn't expect much from a free quiz but wow. Knowing
-          the real costs upfront changed everything for me."
-        </p>
-
-        <p className="text-sm font-medium">
-          — Keyanna, 21, Phoenix
-        </p>
       </div>
-
     </div>
   </div>
 </section>
@@ -305,7 +297,7 @@ A quick snapshot of the hard truths most people don't discover until they've com
 
     <button
       onClick={onStartQuiz}
-      className="w-full h-14 text-lg rounded-lg mb-6 font-bold active:scale-95 transition-transform"
+      className="w-full h-14 text-lg rounded-lg mb-1 font-bold active:scale-95 transition-transform"
       style={{
         color: "#BE185D",
         background:
@@ -316,11 +308,19 @@ A quick snapshot of the hard truths most people don't discover until they've com
       Begin My Nail Tech Journey
     </button>
 
-    <p className="text-lg text-purple-100">
-      Join 12,000+ people who took control of their Nail Tech career
-    </p>
+<div className="mt-2 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm text-white text-center">  
+          <span>✓ Your Info is safe</span>
+          <span>✓ We respect your privacy</span>
+          <span>✓ Unsubscribe anytime</span>
+        </div>
+
+    <p className="text-lg text-purple-100 mt-6">
+  Join 12,000+ people who took control of their Nail Tech career
+</p>
   </div>
 </section>
+
+  </div>
 
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg md:hidden z-50">
         <button

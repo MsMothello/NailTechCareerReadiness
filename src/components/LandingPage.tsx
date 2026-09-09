@@ -28,7 +28,7 @@ export default function LandingPage({
         {/* Quiz Badge */}
         <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
           <Clock className="w-4 h-4" />
-          12 Questions • 90-second Quiz • {takenToday} taken today
+          90-second Quiz • 12 Questions •  {takenToday} taken today
         </div>
 
         {/* Headline */}
@@ -81,15 +81,18 @@ export default function LandingPage({
         </div>
 
         {/* CTA Button */}
+        <div className="text-center">
         <button
           onClick={onStartQuiz}
-          className="w-full md:w-auto px-10 h-14 text-lg rounded-xl text-white font-semibold bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
+  className="w-full md:w-auto max-w-md mx-auto px-10 h-14 text-lg rounded-xl text-white font-semibold bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
         >
           Take the Career Fitness Quiz →
         </button>
+        </div>
 
         {/* Trust / Reassurance */}
-        <div className="mt-2 flex flex-col sm:flex-row items-center md:items-start gap-2 sm:gap-4 text-sm text-gray-500">
+        <div className="mt-2 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm text-gray-500">
+          
           <span>✓ 100% free</span>
           <span>✓ No credit card required</span>
           <span>✓ Results in 90 seconds</span>
@@ -108,7 +111,7 @@ export default function LandingPage({
             <img
 src="/hero-nail-tech.png"         
      alt="Professional nail technician providing a manicure"
-              className="w-full h-[420px] object-cover"
+              className="w-full h-[480px] object-cover"
             />
           </div>
 
@@ -149,56 +152,91 @@ src="/hero-nail-tech.png"
   </div>
 </section>
 
-      <section className="py-4 px-4 bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl mb-3 text-center">
-            The Reality of Becoming a Nail Tech
-          </h2>
-          <h3 className="text-xl text-gray-600 mb-6 text-center">
-A quick snapshot of the hard truths most people don't discover until they've committed to nail school—or sometimes even afterwards.
-</h3>
+<section className="py-16 md:py-20 px-4 bg-gray-50">
+  <div className="max-w-6xl mx-auto">
 
-          <div className="space-y-1 mb-6">
-            <div className="bg-white p-5 rounded-lg border-l-4 border-red-400">
-              <p className="text-gray-700">
-                <span className="font-semibold">38% of students drop out of Nail School </span>{" "}
-                before finishing their license hours
-              </p>
-            </div>
+    {/* Section Heading */}
+    <div className="text-center max-w-3xl mx-auto mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        The Reality of Becoming a Nail Tech
+      </h2>
 
-            <div className="bg-white p-5 rounded-lg border-l-4 border-red-400">
-              <p className="text-gray-700">
-                <span className="font-semibold">
-                  Many struggle to book clients
-                </span>{" "}
-                their first 6–12 months, even with a license
-              </p>
-            </div>
+      <p className="text-lg text-gray-600 leading-relaxed">
+        A quick look at what you should know before committing your time,
+        money, and energy to nail school.
+      </p>
+    </div>
 
-            <div className="bg-white p-5 rounded-lg border-l-4 border-red-400">
-              <p className="text-gray-700">
-                <span className="font-semibold">Burnout hits fast</span> when
-                you're not mentally or financially prepared
-              </p>
-            </div>
-          </div>
+    {/* Reality Cards */}
+    <div className="grid md:grid-cols-3 gap-6">
+
+      {/* Card 1 */}
+      <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+        <div className="text-4xl md:text-5xl font-bold text-pink-600 mb-5">
+          38%
         </div>
-      </section>
 
-       <div className="py-6 px-4">
-  <p className="text-center text-xl text-gray-700 max-w-2xl mx-auto">
-    This isn't about scaring you. It's about making sure you go in prepared to WIN.
-  </p>
+        <h3 className="text-xl font-bold text-gray-900 mb-3">
+          Don't finish nail school
+        </h3>
 
-        <section className="py-1 px-4 mt-6">
-        <div className="max-w-2xl mx-auto">
-          <button
-            onClick={onRealityBreakdown}
-            className="w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-600 hover:to-purple-600 text-white font-semibold py-4 rounded-lg transition-colors text-lg mb-1.5"
-          >
-            Access The Free Reality Breakdown
-          </button>
+        <p className="text-gray-600 leading-relaxed">
+          Some students leave before completing their required license hours.
+        </p>
+      </div>
+
+      {/* Card 2 */}
+      <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+        <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-5">
+          6–12
         </div>
+
+        <h3 className="text-xl font-bold text-gray-900 mb-3">
+          Months to build your clientele
+        </h3>
+
+        <p className="text-gray-600 leading-relaxed">
+          Having a license doesn't automatically mean having a full book of
+          clients.
+        </p>
+      </div>
+
+      {/* Card 3 */}
+      <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+        <div className="text-4xl md:text-5xl mb-5">
+          ⚡
+        </div>
+
+        <h3 className="text-xl font-bold text-gray-900 mb-3">
+          Burnout is real
+        </h3>
+
+        <p className="text-gray-600 leading-relaxed">
+          The physical, mental, and financial demands can add up quickly when
+          you're not prepared.
+        </p>
+      </div>
+
+    </div>
+
+    {/* Supporting Message + CTA */}
+    <div className="text-center max-w-3xl mx-auto mt-12">
+
+      <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+        This isn't about scaring you. It's about making sure you go in
+        <span className="font-bold text-pink-600"> prepared to WIN.</span>
+      </p>
+
+      <button
+        onClick={onRealityBreakdown}
+        className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-white font-semibold text-lg bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
+      >
+        Explore the Free Reality Breakdown →
+      </button>
+
+    </div>
+
+  </div>
 </section>
 
 <section className="py-12 px-4 mb-8 bg-white">

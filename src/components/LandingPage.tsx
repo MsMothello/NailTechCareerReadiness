@@ -41,7 +41,7 @@ export default function LandingPage({
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8">
                 Are You Actually Ready
                 <span className="block text-pink-600">
                   To Be A Nail Tech?
@@ -54,42 +54,45 @@ export default function LandingPage({
                 before realizing it wasn't the right move.
               </p>
 
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto md:mx-0">
-                Do you think you've got what it takes? Take the 90-second quiz
-                and find out.
-              </p>
+{/* QUESTION + BENEFITS */}
+<div className="mb-8 max-w-xl mx-auto md:mx-0">
 
-              {/* Benefits */}
-              <div className="space-y-3 mb-8 max-w-md mx-auto md:mx-0 text-left">
+  <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-4">
+    Do you think you've got what it takes?
+  </p>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm font-bold">
-                    ✓
-                  </div>
-                  <span className="text-gray-700">
-                    Get your personalized readiness score
-                  </span>
-                </div>
+  <div className="space-y-3 max-w-md mx-auto md:mx-0 text-left">
 
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm font-bold">
-                    ✓
-                  </div>
-                  <span className="text-gray-700">
-                    Know your next steps
-                  </span>
-                </div>
+    <div className="flex items-center gap-3">
+      <div className="w-6 h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm font-bold">
+        ✓
+      </div>
+      <span className="text-gray-700">
+        Get your personalized readiness score
+      </span>
+    </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm font-bold">
-                    ✓
-                  </div>
-                  <span className="text-gray-700">
-                    Get a preview of what nail school is really like
-                  </span>
-                </div>
+    <div className="flex items-center gap-3">
+      <div className="w-6 h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm font-bold">
+        ✓
+      </div>
+      <span className="text-gray-700">
+        Know your next steps
+      </span>
+    </div>
 
-              </div>
+    <div className="flex items-center gap-3">
+      <div className="w-6 h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm font-bold">
+        ✓
+      </div>
+      <span className="text-gray-700">
+        Get a preview of what nail school is really like
+      </span>
+    </div>
+
+  </div>
+
+</div>
 
               {/* CTA Button */}
               <div className="text-center">
@@ -120,7 +123,7 @@ export default function LandingPage({
                   <img
                     src="/hero-nail-tech.png"
                     alt="Professional nail technician providing a manicure"
-                    className="w-full h-[600px] object-cover"
+                    className="w-full h-[560px] object-cover"
                   />
                 </div>
 
@@ -368,7 +371,7 @@ export default function LandingPage({
           </h2>
 
           <p className="text-xl mb-5 text-purple-100">
-            90 Seconds now could save you thousands of dollars and months of
+            90 seconds now could save you thousands of dollars and months of
             uncertainty.
           </p>
 

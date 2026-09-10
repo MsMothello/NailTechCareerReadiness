@@ -1,4 +1,4 @@
-import { Sparkles, CheckCircle2, Clock, Gift } from "lucide-react";
+import { Clock } from "lucide-react";
 
 type LandingPageProps = {
   takenToday: number;
@@ -9,7 +9,6 @@ type LandingPageProps = {
 
 export default function LandingPage({
   takenToday,
-  bonusSpots,
   onStartQuiz,
   onRealityBreakdown,
 }: LandingPageProps) {
@@ -357,8 +356,6 @@ src="/hero-nail-tech.png"
 </p>
   </div>
 </section>
-
-  </div>
 
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg md:hidden z-50">
         <button

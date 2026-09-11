@@ -1,4 +1,4 @@
-
+import { useEffect, useRef } from "react";
 import { Clock } from "lucide-react";
 
 type LandingPageProps = {
@@ -13,6 +13,72 @@ export default function LandingPage({
   onStartQuiz,
   onRealityBreakdown,
 }: LandingPageProps) {
+
+  const products = [
+  {
+    name: "Professional Nail Drill",
+    price: "$89",
+    icon: "✦",
+    iconStyle: "circle",
+  },
+  {
+    name: "Gel Polish Collection",
+    price: "$45",
+    icon: "POLISH",
+    iconStyle: "polish",
+  },
+  {
+    name: "Nail Tech Starter Kit",
+    price: "$129",
+    icon: "NAIL KIT",
+    iconStyle: "kit",
+  },
+  {
+    name: "Nail Art Brush Set",
+    price: "$24",
+    icon: "BRUSHES",
+    iconStyle: "brushes",
+  },
+  {
+    name: "Professional Nail Tips",
+    price: "$18",
+    icon: "TIPS",
+    iconStyle: "tips",
+  },
+  {
+    name: "UV/LED Nail Lamp",
+    price: "$59",
+    icon: "UV / LED",
+    iconStyle: "lamp",
+  },
+];
+
+  const productScrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const container = productScrollRef.current;
+
+      if (!container) return;
+
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      if (container.scrollLeft >= maxScroll - 10) {
+        container.scrollTo({
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        container.scrollBy({
+          left: 220,
+          behavior: "smooth",
+        });
+      }
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
 
@@ -281,7 +347,7 @@ export default function LandingPage({
     <div className="h-px flex-1 bg-purple-200/60"></div>
 
     <span className="text-[10px] tracking-[0.2em] text-gray-400 uppercase">
-      Advertisement
+      Ready to Commit?
     </span>
 
     <div className="h-px flex-1 bg-purple-200/60"></div>
@@ -403,16 +469,15 @@ export default function LandingPage({
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
 
               <div className="text-4xl md:text-5xl font-bold text-pink-600 mb-3">
-                38%
+                33%
               </div>
 
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Don't finish nail school
+                Fail Their First Licensing Exam
               </h3>
 
               <p className="text-gray-600 leading-relaxed">
-                Some students leave before completing their required license
-                hours.
+                Passing state licensing exam isn't guaranteed, even after finishing school.
               </p>
 
             </div>
@@ -422,7 +487,7 @@ export default function LandingPage({
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
 
               <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-3">
-                6–12
+                12–24
               </div>
 
               <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -430,8 +495,7 @@ export default function LandingPage({
               </h3>
 
               <p className="text-gray-600 leading-relaxed">
-                Having a license doesn't automatically mean having a full book
-                of clients.
+                A license gets you started. Building a steady clientele takes time.
               </p>
 
             </div>
@@ -449,8 +513,8 @@ export default function LandingPage({
               </h3>
 
               <p className="text-gray-600 leading-relaxed">
-                The physical, mental, and financial demands can add up quickly
-                when you're not prepared.
+               Research shows that the physical, mental, and financial demands can add up quickly
+                
               </p>
 
             </div>
@@ -480,6 +544,206 @@ export default function LandingPage({
         </div>
       </section>
 
+
+{/* FEATURED PRODUCTS / SHOPPING CAROUSEL */}
+
+<section className="py-3 px-2 bg-gradient-to-r from-purple-50/60 via-pink-50/70 to-purple-50/60 border-y border-purple-100/70">
+
+  <div className="max-w-7xl mx-auto">
+
+    {/* Section Label */}
+
+    <div className="flex items-center gap-3 mb-3">
+
+      <div className="h-px flex-1 bg-purple-200/60"></div>
+
+      <span className="text-[10px] tracking-[0.25em] uppercase text-purple-400 font-medium">
+        Featured
+      </span>
+
+      <div className="h-px flex-1 bg-purple-200/60"></div>
+
+    </div>
+
+
+    {/* Product Container */}
+
+    <div className="rounded-2xl bg-white/90 border border-purple-100 shadow-sm p-3 md:p-4">
+
+      {/* Header */}
+
+      <div className="flex items-center justify-between mb-2">
+
+        <div>
+          <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+            Nail Tech Essentials
+          </h3>
+
+        </div>
+
+        <span className="hidden sm:block text-xs text-gray-400">
+          Shop products for your nail journey
+        </span>
+
+      </div>
+
+
+      {/* Carousel */}
+
+      <div className="flex items-center gap-2">
+
+        {/* LEFT ARROW */}
+
+        <button
+          onClick={() => {
+            document.getElementById("product-scroll")?.scrollBy({
+              left: -320,
+              behavior: "smooth"
+            });
+          }}
+          className="flex-shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white border border-purple-100 text-purple-400 shadow-sm flex items-center justify-center hover:bg-purple-50 transition"
+          aria-label="Previous products"
+        >
+          ←
+        </button>
+
+
+        {/* PRODUCTS */}
+
+        <div
+        ref={productScrollRef}
+          id="product-scroll"
+          className="flex gap-3 overflow-x-auto scroll-smooth snap-x snap-mandatory flex-1"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none"
+          }}
+        >
+
+          {products.map((product) => (
+
+            <div
+              key={product.name}
+              className="min-w-[190px] md:min-w-[23.5%] snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm"
+            >
+
+              {/* PRODUCT DISPLAY */}
+
+              <div className="h-40 bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center">
+
+                {product.iconStyle === "circle" && (
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
+                    <span className="text-purple-500 text-xl">
+                      {product.icon}
+                    </span>
+                  </div>
+                )}
+
+                {product.iconStyle === "polish" && (
+                  <div className="flex gap-1">
+                    <div className="w-7 h-14 rounded-full bg-pink-200"></div>
+                    <div className="w-7 h-16 rounded-full bg-purple-200"></div>
+                    <div className="w-7 h-12 rounded-full bg-fuchsia-200"></div>
+                  </div>
+                )}
+
+                {product.iconStyle === "kit" && (
+                  <div className="w-20 h-12 rounded-lg bg-gradient-to-r from-purple-200 to-pink-200 flex items-center justify-center">
+                    <span className="text-purple-500 text-xs font-semibold">
+                      {product.icon}
+                    </span>
+                  </div>
+                )}
+
+                {product.iconStyle === "brushes" && (
+                  <div className="flex gap-2">
+                    <div className="w-2 h-16 bg-purple-300 rounded-full rotate-[-15deg]"></div>
+                    <div className="w-2 h-16 bg-pink-300 rounded-full"></div>
+                    <div className="w-2 h-16 bg-fuchsia-300 rounded-full rotate-[15deg]"></div>
+                  </div>
+                )}
+
+                {product.iconStyle === "tips" && (
+                  <div className="w-20 h-14 rounded-md bg-white border-2 border-pink-200 flex items-center justify-center">
+                    <span className="text-xs text-pink-400 font-semibold">
+                      {product.icon}
+                    </span>
+                  </div>
+                )}
+
+                {product.iconStyle === "lamp" && (
+                  <div className="w-20 h-12 rounded-xl bg-purple-200 flex items-center justify-center">
+                    <span className="text-purple-500 text-xs font-bold">
+                      {product.icon}
+                    </span>
+                  </div>
+                )}
+
+              </div>
+
+
+              {/* PRODUCT INFO */}
+
+              <div className="p-2">
+
+                <h4 className="font-semibold text-sm text-gray-800">
+                  {product.name}
+                </h4>
+
+                <div className="flex items-center justify-between mt-2">
+
+                  <span className="font-semibold text-sm text-purple-500">
+                    {product.price}
+                  </span>
+
+                  <button className="px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs font-medium hover:opacity-90 transition">
+                    Shop Now
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+
+        {/* RIGHT ARROW */}
+
+        <button
+          onClick={() => {
+            document.getElementById("product-scroll")?.scrollBy({
+              left: 320,
+              behavior: "smooth"
+            });
+          }}
+          className="flex-shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white border border-purple-100 text-purple-400 shadow-sm flex items-center justify-center hover:bg-purple-50 transition"
+          aria-label="Next products"
+        >
+          →
+        </button>
+
+      </div>
+
+
+      {/* Bottom Label */}
+
+      <div className="text-center mt-3 pt-2 border-t border-gray-100">
+
+        <span className="text-[9px] tracking-[0.2em] uppercase text-gray-400">
+           Resources for Your Growth • Curated for Every Step 
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* TESTIMONIALS */}
       <section className="py-12 px-2 mb-4 bg-white">
@@ -546,274 +810,6 @@ export default function LandingPage({
         </div>
       </section>
 
-{/* ADVERTISEMENT / SHOPPING CAROUSEL */}
-<section className="py-7 px-4 bg-gradient-to-r from-purple-50/60 via-pink-50/70 to-purple-50/60 border-y border-purple-100/70">
-  <div className="max-w-7xl mx-auto">
-
-    {/* Advertisement Label */}
-    <div className="flex items-center gap-3 mb-4">
-      <div className="h-px flex-1 bg-purple-200/60"></div>
-
-      <span className="text-[10px] tracking-[0.25em] uppercase text-purple-400 font-medium">
-        Advertisement
-      </span>
-
-      <div className="h-px flex-1 bg-purple-200/60"></div>
-    </div>
-
-
-    {/* Ad Container */}
-    <div className="rounded-2xl bg-white/90 border border-purple-100 shadow-sm p-4 md:p-5">
-
-      {/* Ad Header */}
-      <div className="flex items-center justify-between mb-4">
-
-        <div>
-          <span className="text-[9px] uppercase tracking-wider text-gray-400">
-            Sponsored
-          </span>
-
-          <h3 className="text-lg md:text-xl font-semibold text-gray-800">
-            Nail Tech Essentials
-          </h3>
-        </div>
-
-        <span className="hidden sm:block text-xs text-gray-400">
-          Shop products for your nail journey
-        </span>
-
-      </div>
-
-
-      {/* Carousel */}
-      <div className="flex items-center gap-2">
-
-        {/* LEFT ARROW */}
-        <button
-          onClick={() => {
-            document.getElementById("product-scroll")?.scrollBy({
-              left: -320,
-              behavior: "smooth"
-            });
-          }}
-          className="flex-shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white border border-purple-100 text-purple-400 shadow-sm flex items-center justify-center hover:bg-purple-50 transition"
-          aria-label="Previous products"
-        >
-          ←
-        </button>
-
-
-        {/* PRODUCTS */}
-        <div
-          id="product-scroll"
-          className="flex gap-3 overflow-x-auto scroll-smooth snap-x snap-mandatory flex-1"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none"
-          }}
-        >
-
-          {/* PRODUCT 1 */}
-          <div className="min-w-[190px] md:min-w-[23.5%] snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-
-            <div className="h-28 bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
-                <span className="text-purple-500 text-xl">✦</span>
-              </div>
-            </div>
-
-            <div className="p-3">
-              <h4 className="font-semibold text-sm text-gray-800">
-                Professional Nail Drill
-              </h4>
-
-              <div className="flex items-center justify-between mt-3">
-                <span className="font-semibold text-sm text-purple-500">
-                  $89
-                </span>
-
-                <button className="px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs font-medium">
-                  Shop Now
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-          {/* PRODUCT 2 */}
-          <div className="min-w-[190px] md:min-w-[23.5%] snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-
-            <div className="h-28 bg-gradient-to-br from-pink-50 to-purple-50 flex items-center justify-center">
-              <div className="flex gap-1">
-                <div className="w-7 h-14 rounded-full bg-pink-200"></div>
-                <div className="w-7 h-16 rounded-full bg-purple-200"></div>
-                <div className="w-7 h-12 rounded-full bg-fuchsia-200"></div>
-              </div>
-            </div>
-
-            <div className="p-3">
-              <h4 className="font-semibold text-sm text-gray-800">
-                Gel Polish Collection
-              </h4>
-
-              <div className="flex items-center justify-between mt-3">
-                <span className="font-semibold text-sm text-purple-500">
-                  $45
-                </span>
-
-                <button className="px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs font-medium">
-                  Shop Now
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-          {/* PRODUCT 3 */}
-          <div className="min-w-[190px] md:min-w-[23.5%] snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-
-            <div className="h-28 bg-gradient-to-br from-purple-50 to-fuchsia-50 flex items-center justify-center">
-              <div className="w-20 h-12 rounded-lg bg-gradient-to-r from-purple-200 to-pink-200 flex items-center justify-center">
-                <span className="text-purple-500 text-xs font-semibold">
-                  NAIL KIT
-                </span>
-              </div>
-            </div>
-
-            <div className="p-3">
-              <h4 className="font-semibold text-sm text-gray-800">
-                Nail Tech Starter Kit
-              </h4>
-
-              <div className="flex items-center justify-between mt-3">
-                <span className="font-semibold text-sm text-purple-500">
-                  $129
-                </span>
-
-                <button className="px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs font-medium">
-                  Shop Now
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-          {/* PRODUCT 4 */}
-          <div className="min-w-[190px] md:min-w-[23.5%] snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-
-            <div className="h-28 bg-gradient-to-br from-pink-50 to-fuchsia-50 flex items-center justify-center">
-              <div className="flex gap-2">
-                <div className="w-2 h-16 bg-purple-300 rounded-full rotate-[-15deg]"></div>
-                <div className="w-2 h-16 bg-pink-300 rounded-full"></div>
-                <div className="w-2 h-16 bg-fuchsia-300 rounded-full rotate-[15deg]"></div>
-              </div>
-            </div>
-
-            <div className="p-3">
-              <h4 className="font-semibold text-sm text-gray-800">
-                Nail Art Brush Set
-              </h4>
-
-              <div className="flex items-center justify-between mt-3">
-                <span className="font-semibold text-sm text-purple-500">
-                  $24
-                </span>
-
-                <button className="px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs font-medium">
-                  Shop Now
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-          {/* PRODUCT 5 */}
-          <div className="min-w-[190px] md:min-w-[23.5%] snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-
-            <div className="h-28 bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center">
-              <div className="w-20 h-14 rounded-md bg-white border-2 border-pink-200 flex items-center justify-center">
-                <span className="text-xs text-pink-400 font-semibold">
-                  TIPS
-                </span>
-              </div>
-            </div>
-
-            <div className="p-3">
-              <h4 className="font-semibold text-sm text-gray-800">
-                Professional Nail Tips
-              </h4>
-
-              <div className="flex items-center justify-between mt-3">
-                <span className="font-semibold text-sm text-purple-500">
-                  $18
-                </span>
-
-                <button className="px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs font-medium">
-                  Shop Now
-                </button>
-              </div>
-            </div>
-          </div>
-
-
-          {/* PRODUCT 6 */}
-          <div className="min-w-[190px] md:min-w-[23.5%] snap-start bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-
-            <div className="h-28 bg-gradient-to-br from-fuchsia-50 to-purple-50 flex items-center justify-center">
-              <div className="w-20 h-12 rounded-xl bg-purple-200 flex items-center justify-center">
-                <span className="text-purple-500 text-xs font-bold">
-                  UV / LED
-                </span>
-              </div>
-            </div>
-
-            <div className="p-3">
-              <h4 className="font-semibold text-sm text-gray-800">
-                UV/LED Nail Lamp
-              </h4>
-
-              <div className="flex items-center justify-between mt-3">
-                <span className="font-semibold text-sm text-purple-500">
-                  $59
-                </span>
-
-                <button className="px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs font-medium">
-                  Shop Now
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        {/* RIGHT ARROW */}
-        <button
-          onClick={() => {
-            document.getElementById("product-scroll")?.scrollBy({
-              left: 320,
-              behavior: "smooth"
-            });
-          }}
-          className="flex-shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white border border-purple-100 text-purple-400 shadow-sm flex items-center justify-center hover:bg-purple-50 transition"
-          aria-label="Next products"
-        >
-          →
-        </button>
-
-      </div>
-
-
-      {/* Bottom Ad Label */}
-      <div className="text-center mt-4 pt-3 border-t border-gray-100">
-        <span className="text-[9px] tracking-[0.2em] uppercase text-gray-400">
-          Advertisement • Product Promotion
-        </span>
-      </div>
-
-    </div>
-  </div>
-</section>
 
       {/* FINAL CTA */}
       <section className="py-8 px-4 bg-gradient-to-b from-purple-600 to-pink-600 text-white">

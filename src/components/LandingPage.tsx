@@ -1,3 +1,4 @@
+
 import { Clock } from "lucide-react";
 
 type LandingPageProps = {
@@ -13,6 +14,113 @@ export default function LandingPage({
   onRealityBreakdown,
 }: LandingPageProps) {
   return (
+    <>
+
+   {/* Premium Beauty Navigation */}
+<nav className="w-full bg-white">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="flex items-center justify-between h-14">
+
+      {/* Brand */}
+<div className="flex flex-col items-center leading-none">
+
+  {/* NTR Broken Box */}
+  <div className="relative px-3 py-1">
+
+    {/* Top line */}
+    <div className="absolute top-0 left-1 right-1 h-3 border-t border-gray-800 rounded-t-full"></div>
+
+    {/* Bottom line */}
+    <div className="absolute bottom-0 left-1 right-1 h-3 border-b border-gray-800 rounded-b-full"></div>
+
+    {/* NTR */}
+    <div className="relative px-3 py-0.5 text-lg font-serif tracking-[0.3em] text-gray-900">
+      N T R
+    </div>
+
+  </div>
+
+  {/* Brand Name */}
+  <div className="mt-1.5 text-[9px] font-medium tracking-[0.18em] text-gray-800 uppercase whitespace-nowrap">
+    NAIL TECH READY
+</div>  
+      </div>
+
+{/* Navigation Links */}
+<div className="hidden md:flex items-center gap-7 ml-20 mr-16">
+
+  <a
+    href="#"
+    className="text-xs uppercase tracking-widest text-gray-500
+               hover:text-purple-600 transition"
+  >
+    Home
+  </a>
+
+  <a
+    href="#quiz"
+    className="text-xs uppercase tracking-widest text-gray-500
+               hover:text-purple-600 transition"
+  >
+    Career Quiz
+  </a>
+
+  <a
+    href="#reality"
+    className="text-xs uppercase tracking-widest text-gray-500
+               hover:text-purple-600 transition"
+  >
+    Reality Check
+  </a>
+
+  <a
+    href="#roadmap"
+    className="text-xs uppercase tracking-widest text-gray-500
+               hover:text-purple-600 transition"
+  >
+    Roadmap
+  </a>
+
+  <a
+    href="#shop"
+    className="text-xs uppercase tracking-widest text-gray-500
+               hover:text-purple-600 transition"
+  >
+    Shop
+
+        </a>
+
+      </div>
+
+      {/* Right Side */}
+      <div className="flex items-center gap-5">
+
+        <a
+          href="#login"
+          className="hidden sm:block text-xs uppercase tracking-widest
+                     text-gray-500 hover:text-purple-600"
+        >
+          Log In
+        </a>
+
+        <button
+          className="px-5 py-2.5 border border-purple-300
+                     rounded-full text-xs uppercase tracking-wider
+                     text-purple-600 hover:bg-purple-50 transition"
+        >
+          Get Started
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>
+   
     <div className="min-h-screen bg-white">
 
       {/* HERO SECTION */}
@@ -483,7 +591,7 @@ export default function LandingPage({
         {/* LEFT ARROW */}
         <button
           onClick={() => {
-            document.getElementById("product-scroll").scrollBy({
+            document.getElementById("product-scroll")?.scrollBy({
               left: -320,
               behavior: "smooth"
             });
@@ -682,7 +790,7 @@ export default function LandingPage({
         {/* RIGHT ARROW */}
         <button
           onClick={() => {
-            document.getElementById("product-scroll").scrollBy({
+            document.getElementById("product-scroll")?.scrollBy({
               left: 320,
               behavior: "smooth"
             });
@@ -768,5 +876,6 @@ export default function LandingPage({
       </div>
 
     </div>
+    </>
   );
 }

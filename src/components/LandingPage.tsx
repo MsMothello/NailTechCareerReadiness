@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Clock } from "lucide-react";
+import { Zap } from "lucide-react";
 
 type LandingPageProps = {
   takenToday: number;
@@ -202,11 +202,11 @@ export default function LandingPage({
 
          {/* Quiz Badge */}
 <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-  <Clock className="w-4 h-4" aria-hidden="true" />
-  <span>90-second Quiz</span>
-  <span>•</span>
   <span className="font-bold">?</span>
   <span>12 Questions</span>
+  <span>•</span>
+ <span className="font-bold">✦</span>
+  <span>Real Insights</span>
   <span>•</span>
   <span className="font-bold">✓</span>
   <span>{takenToday} taken today</span>
@@ -258,7 +258,7 @@ export default function LandingPage({
         ✓
       </div>
       <span className="text-gray-700">
-        Get a preview of what nail school is really like
+        Preview what you'll learn in nail school
       </span>
     </div>
 
@@ -278,9 +278,9 @@ export default function LandingPage({
 
               {/* Trust / Reassurance */}
               <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-sm text-gray-500">
+                 <span>✓ Built for aspiring nail techs</span>
                 <span>✓ 100% free</span>
                 <span>✓ No credit card required</span>
-                <span>✓ Results in 90 seconds</span>
               </div>
 
             </div>
@@ -320,7 +320,7 @@ export default function LandingPage({
                   </div>
 
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Find out if you're ready before investing in nail school.
+                    Find out if you're ready before investing in your Journey.
                   </p>
 
                 </div>
@@ -328,7 +328,7 @@ export default function LandingPage({
                 {/* Small Floating Badge */}
                 <div className="absolute -top-4 -right-4 bg-white rounded-full shadow-lg px-5 py-3">
                   <p className="text-sm font-semibold text-pink-600">
-                    90 seconds
+                    90 seconds Quiz
                   </p>
                 </div>
 
@@ -486,7 +486,7 @@ export default function LandingPage({
             {/* Card 2 */}
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
 
-              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-3">
+              <div className="text-4xl md:text-5xl font-bold text-purple-500 mb-3">
                 12–24
               </div>
 
@@ -504,16 +504,16 @@ export default function LandingPage({
             {/* Card 3 */}
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
 
-              <div className="text-4xl md:text-5xl mb-3">
-                ⚡
-              </div>
+              <div className="text-4xl md:text-5xl mb-3 text-purple-700">
+  <Zap size={48} strokeWidth={2.5} />
+</div>
 
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 Burnout is real
               </h3>
 
               <p className="text-gray-600 leading-relaxed">
-               Research shows that the physical, mental, and financial demands can add up quickly
+               Research shows that physical, mental, and financial demands can add up quickly
                 
               </p>
 

@@ -58,7 +58,7 @@ export default function DetailedReport({ results, email, onBack }: DetailedRepor
   const critFlags = triggeredFlags.filter((f) => f.level === "critical");
   const advFlags = triggeredFlags.filter((f) => f.level === "advisory");
   const orderedFlags = [...critFlags, ...advFlags];
-  const steps = NEXT_STEPS[worstSection.id] || NEXT_STEPS.businessAcumen;
+  const steps = NEXT_STEPS[worstSection.id as keyof typeof NEXT_STEPS] || NEXT_STEPS.businessAcumen;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 to-purple-50 py-12 px-4">

@@ -222,7 +222,7 @@ export default function LandingPage({
 
               {/* Main Description */}
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6 max-w-xl mx-auto md:mx-0">
-                Most aspiring nail technicians spend $3K–$8K and 6+ months
+                Most aspiring nail technicians spend $3K–$10K and 6+ months
                 before realizing it wasn't the right move.
               </p>
 
@@ -414,22 +414,21 @@ export default function LandingPage({
 
       {/* CTA */}
       <div className="flex-shrink-0">
-
-        <button
-          onClick={() => {
-            // Add your Blueprint checkout/link here
-          }}
-          className="px-4 sm:px-6 py-2.5 sm:py-3
-                     rounded-full
-                     bg-gradient-to-r from-purple-400 to-pink-400
-                     text-white text-xs sm:text-sm
-                     font-medium
-                     shadow-sm
-                     hover:opacity-90
-                     transition"
-        >
-          Get the Blueprint
-        </button>
+<button
+  onClick={() => {
+    // Add your Blueprint checkout/link here
+  }}
+  className="px-4 sm:px-6 py-2.5 sm:py-3
+             rounded-full
+             bg-gradient-to-r from-purple-300 to-purple-50
+             text-purple-400 text-xs sm:text-sm
+             font-medium
+             shadow-sm shadow-purple-200/50
+             hover:opacity-90
+             transition"
+>
+  Get the Blueprint
+</button>
 
       </div>
 
@@ -466,7 +465,7 @@ export default function LandingPage({
           <div className="grid md:grid-cols-3 gap-4">
 
             {/* Card 1 */}
-            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
 
               <div className="text-4xl md:text-5xl font-bold text-pink-600 mb-3">
                 33%
@@ -504,10 +503,11 @@ export default function LandingPage({
             {/* Card 3 */}
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
 
-              <div className="text-4xl md:text-5xl mb-3 text-purple-700">
-  <Zap size={48} strokeWidth={2.5} />
+<div className="h-12 flex items-center justify-start gap-1 mb-2">
+  <Zap size={32} strokeWidth={2} className="text-purple-700/40" />
+  <Zap size={58} fill="currentColor" strokeWidth={2} className="text-purple-700" />
+  <Zap size={32} strokeWidth={2} className="text-purple-700/40" />
 </div>
-
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 Burnout is real
               </h3>
@@ -692,13 +692,19 @@ export default function LandingPage({
 
                 <div className="flex items-center justify-between mt-2">
 
-                  <span className="font-semibold text-sm text-purple-500">
+                  <span className="font-semibold text-sm text-purple-600">
                     {product.price}
                   </span>
 
-                  <button className="px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs font-medium hover:opacity-90 transition">
-                    Shop Now
-                  </button>
+                  <button
+  className="px-3 py-1.5 rounded-full
+             bg-gradient-to-r from-purple-200 to-purple-50
+             text-purple-400 text-xs font-medium
+             shadow-sm shadow-purple-200/50
+             hover:opacity-90 transition"
+>
+  Shop Now
+</button>
 
                 </div>
 

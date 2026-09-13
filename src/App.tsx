@@ -1,6 +1,6 @@
 import { Suspense, lazy, useState } from "react";
 import LandingPage from "./components/LandingPage";
-import Quiz from "./components/Quiz";
+import Quiz from "./components/Quiz/Quiz";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const RealityBreakdown = lazy(() => import("./components/RealityBreakdown"));
@@ -105,16 +105,6 @@ export default function App() {
     setStage("email-gate");
   };
 
-  const handleRequestDetailedReport = (results?: unknown) => {
-    setQuizResults((results as QuizResults) || null);
-    setEmailGateTarget("detailed-report");
-    setStage("email-gate");
-  };
-
-  const handleBlueprintAccess = () => {
-    setStage("blueprint");
-  };
-
   const handleBackToLanding = () => {
     setStage("landing");
   };
@@ -129,13 +119,7 @@ export default function App() {
   };
 
   if (stage === "quiz") {
-    return (
-      <Quiz
-        onRequestRealityBreakdown={handleAccessRealityBreakdown}
-        onRequestBlueprint={handleBlueprintAccess}
-        onRequestDetailedReport={handleRequestDetailedReport}
-      />
-    );
+    return <Quiz />;
   }
 
   if (stage === "email-gate") {

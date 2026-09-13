@@ -1,0 +1,217 @@
+/* =========================================================
+   QUIZ PREVIEW REPORT — additive styles only.
+   Reuses .quiz-design / .quiz-design__results / .quiz-design__score*
+   etc. from QuizDesign.css (imported alongside this file), so the
+   free preview and the full gated report look like one continuous
+   design system rather than two different products.
+========================================================= */
+
+.quiz-preview__locked-section {
+  margin-bottom: 12px;
+  padding: 15px;
+
+  border: 1.5px dashed #e2e8f0;
+  border-radius: 13px;
+
+  background: #f8fafc;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quiz-preview__locked-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.quiz-preview__locked-title {
+  flex: 1;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #475569;
+}
+
+.quiz-preview__locked-badge {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 4px 9px;
+
+  border-radius: 999px;
+
+  background: #f1f5f9;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #94a3b8;
+}
+
+.quiz-preview__unlock-line {
+  margin-top: 14px;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+
+  color: #9333ea;
+}
+
+.quiz-preview__gate {
+  margin-top: 26px;
+  padding: 24px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #fdf2f8, #f5f3ff);
+  border: 1px solid #f3e8ff;
+}
+
+.quiz-preview__gate-title {
+  margin-bottom: 10px;
+
+  font-family: "DM Serif Display", serif;
+  font-size: 19px;
+  line-height: 1.35;
+  text-align: center;
+
+  color: #1e293b;
+}
+
+.quiz-preview__value-list {
+  margin: 16px 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.quiz-preview__value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  margin-bottom: 9px;
+
+  font-size: 12.5px;
+  line-height: 1.5;
+
+  color: #475569;
+}
+
+.quiz-preview__value-check {
+  flex-shrink: 0;
+
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f5d0fe;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  color: #86198f;
+
+  margin-top: 1px;
+}
+
+.quiz-preview__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-preview__input {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1.5px solid #e2e8f0;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  color: #1e293b;
+}
+
+.quiz-preview__input:focus {
+  outline: none;
+  border-color: #c084fc;
+}
+
+.quiz-preview__input.has-error {
+  border-color: #fda4af;
+}
+
+.quiz-preview__input-error {
+  margin-top: -4px;
+
+  font-size: 11.5px;
+
+  color: #be123c;
+}
+
+.quiz-preview__submit {
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 18px rgba(147, 51, 234, 0.18);
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.quiz-preview__submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.quiz-preview__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.quiz-preview__gate-note {
+  margin-top: 12px;
+
+  font-size: 10.5px;
+  text-align: center;
+
+  color: #94a3b8;
+}
+
+@media (max-width: 480px) {
+  .quiz-preview__gate {
+    padding: 20px;
+  }
+}

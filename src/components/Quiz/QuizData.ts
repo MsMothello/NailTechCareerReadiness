@@ -48,7 +48,7 @@ export const QUESTION_DEFS: QuestionDef[] = [
       message:
         "You indicated a real chemical or respiratory sensitivity. Daily exposure to nail product fumes and dust is unavoidable in this career.",
       remedy:
-        "Speak with a doctor who understands occupational chemical exposure before investing in school — this is a medical question, not a willpower question.",
+        "Book an appointment specifically to discuss occupational chemical exposure — bring the product list (acrylics, MMA-free monomers, gel top coats, acetone) so the doctor can give a real assessment rather than a generic one. Ask directly whether a respirator-grade mask and downdraft ventilation would be sufficient, or whether this exposure level is contraindicated for your condition. This is a medical question, not a willpower question, and it's far cheaper to answer before a deposit than after one.",
     },
     variants: [
       {
@@ -99,7 +99,8 @@ export const QUESTION_DEFS: QuestionDef[] = [
       type: "critical",
       message:
         "The 8–10 hour fixed-position, repetitive-motion demand of this career is not optional or occasional — it's the daily baseline.",
-      remedy: "Get honest input from a doctor or physical therapist before committing financially to school.",
+      remedy:
+        "Get a physical therapist's opinion specifically on sustained wrist flexion, forward neck posture, and prolonged sitting — the three postures that define this job. Ask for a home exercise plan you could start now, before school, so your body is already adapting rather than starting from zero on day one. If you have a wearable or fitness tracker, spend a week logging how your body actually responds to a few hours of detailed handwork as a real-world test.",
     },
     variants: [
       {
@@ -150,7 +151,8 @@ export const QUESTION_DEFS: QuestionDef[] = [
       type: "advisory",
       message:
         "Discomfort with hands-on physical contact is common early on, but it's worth being honest about now rather than assuming it resolves on its own.",
-      remedy: "Talk to a working nail tech about how this actually feels day to day before enrolling.",
+      remedy:
+        "Ask a working nail tech if you can shadow a real shift — even a few hours — before you enroll. Watching someone else handle feet, ingrown nails, and skin conditions in person is a far better test of your comfort level than imagining it. If shadowing isn't possible, ask specifically how they felt in their first month versus now, since most report real desensitization within a few weeks.",
     },
     variants: [
       {
@@ -204,7 +206,8 @@ export const QUESTION_DEFS: QuestionDef[] = [
       type: "critical",
       message:
         "Without financial reserves or a supplemental income plan, the 6–24 month client-building ramp-up is a serious financial risk — the single most common reason nail techs leave the profession in their first two years.",
-      remedy: "Build a specific financial plan that covers this full period before enrolling.",
+      remedy:
+        "Write out an actual month-by-month budget for 24 months: fixed expenses (rent, insurance, minimum debt payments), realistic client income starting near zero and ramping slowly, and the exact gap between the two each month. Total that gap — that's your real number to save or line up support for before you enroll, not a vague 'I'll figure it out.' If the number is too large to cover, consider a part-time job or reduced course load that stretches the timeline but removes the financial cliff.",
     },
     variants: [
       {
@@ -256,7 +259,7 @@ export const QUESTION_DEFS: QuestionDef[] = [
       message:
         "If the $3,000–$10,000+ startup investment was new information or currently unaffordable, your financial preparation isn't complete yet.",
       remedy:
-        "Build a full, itemized cost estimate — tuition, licensing, tools, products, insurance, living buffer — before committing to a deposit.",
+        "Request an itemized quote from at least two schools, broken down by tuition, state board exam fee, required kit/tools, and any hidden costs like liability insurance or a smock/uniform. Add a separate line for 'starter product inventory' since most new techs underestimate this by hundreds of dollars. Compare the total against your actual savings, not your expected future income, before signing anything.",
     },
     variants: [
       {
@@ -306,7 +309,8 @@ export const QUESTION_DEFS: QuestionDef[] = [
     flag: {
       type: "advisory",
       message: "Evenings and weekends are peak booking time in this industry, not an occasional requirement.",
-      remedy: "If your schedule genuinely can't flex, factor that limitation into your income projections before committing to a school.",
+      remedy:
+        "Map your actual weekly availability hour by hour, then compare it against typical salon booking patterns (usually Tuesday–Saturday, with Thursday evenings and Saturdays being the highest-demand slots). If your available hours don't overlap with peak demand, run the math on how much longer client-building would realistically take, and factor that into your financial runway rather than assuming it will work out.",
     },
     variants: [
       {
@@ -359,7 +363,8 @@ export const QUESTION_DEFS: QuestionDef[] = [
       type: "critical",
       message:
         "Complying with an unsafe service request — even under real client pressure — puts the client's health at direct risk and places your license in jeopardy.",
-      remedy: "Develop a clear, practiced refusal response for this exact situation before you're in a professional setting.",
+      remedy:
+        "Write down the exact words you'd say — for example: 'I can't safely do that because it puts your nail health at risk, but here's what I can do instead.' Practice saying it out loud until it feels natural, not confrontational. Decide in advance what you'll do if the client pushes back or gets upset, so you're not improvising a safety decision in the moment under real pressure.",
     },
     variants: [
       {
@@ -455,7 +460,8 @@ export const QUESTION_DEFS: QuestionDef[] = [
     flag: {
       type: "advisory",
       message: "Difficulty enforcing policies is one of the most common ways nail tech businesses quietly lose money.",
-      remedy: "Practise the exact words you'd use in a no-show or late-fee conversation before you need them for real.",
+      remedy:
+        "Draft the exact wording of your no-show and late policy now, before you have a real client to test it on — for example: 'Our policy is a 50% charge for no-shows, which I do apply consistently so I can be fair to every client.' Send it in writing (booking confirmation or intake form) so enforcing it later is just pointing back to something they already agreed to, not a confrontation you're creating on the spot.",
     },
     variants: [
       {
@@ -507,7 +513,8 @@ export const QUESTION_DEFS: QuestionDef[] = [
     flag: {
       type: "advisory",
       message: "Self-employment means no one else manages your schedule, taxes, marketing, or supplies.",
-      remedy: "Start building these skills now, or consider a salon-employed path first while you develop them.",
+      remedy:
+        "Take a short small-business basics course (many community colleges and SBA chapters offer free or low-cost ones) covering bookkeeping, quarterly taxes, and simple scheduling systems. If self-employment still feels overwhelming after that, a salon-employed position for your first 1-2 years is a completely legitimate path — it lets someone else handle the business side while you build technical skill and confidence.",
     },
     variants: [
       {
@@ -557,7 +564,8 @@ export const QUESTION_DEFS: QuestionDef[] = [
     flag: {
       type: "advisory",
       message: "Nail artistry evolves constantly — techs who stop learning after licensing lose clients to those who don't.",
-      remedy: "Budget real time and money for ongoing education from day one rather than assuming your license is the finish line.",
+      remedy:
+        "Set a specific annual budget line — both money and hours — for continuing education from your very first year, even if it's small at first. Follow two or three working nail artists whose technique you admire and note which specific skills or products keep coming up, so your learning stays targeted rather than random. Treat your first advanced class as a cost of staying in business, not an optional extra.",
     },
     variants: [
       {

@@ -221,9 +221,9 @@ export default function LandingPage({
               </h1>
 
               {/* Main Description */}
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6 max-w-xl mx-auto md:mx-0">
-                Most aspiring nail technicians spend $3K–$10K and 6+ months
-                before realizing it wasn't the right move.
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6 max-w-xl mx-auto md:mx-0">        
+               Most aspiring nail techs spend $3K–$10K and 6+ months into the journey
+before realizing it wasn't the right move.
               </p>
 
 {/* QUESTION + BENEFITS */}
@@ -298,9 +298,9 @@ export default function LandingPage({
                     className="w-full h-[560px] object-cover"
                   />
                 </div>
-
+s
                 {/* Floating Quiz Card */}
-<div className="absolute -bottom-6 -left-4 md:-left-8 bg-white rounded-2xl shadow-xl px-6 py-4 max-w-[280px]">
+<div className="absolute -bottom-5 -left-3 md:-left-8 bg-white rounded-2xl shadow-xl px-5 py-3 max-w-[300px]">
                   <div className="flex items-center gap-3 mb-2">
 
                     <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center">
@@ -309,18 +309,15 @@ export default function LandingPage({
 
                     <div>
                       <p className="font-bold text-gray-900">
-                        Nail Tech Career Fitness
+                        Nail Technician Career Fitness Quiz
                       </p>
 
-                      <p className="text-sm text-gray-500">
-                        Quiz
-                      </p>
                     </div>
 
                   </div>
 
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Find out if you're ready before investing in your Journey.
+                    Find out if you're ready before investing in your journey.
                   </p>
 
                 </div>
@@ -347,7 +344,7 @@ export default function LandingPage({
     <div className="h-px flex-1 bg-purple-200/60"></div>
 
     <span className="text-[10px] tracking-[0.2em] text-gray-400 uppercase">
-      Ready to Commit?
+     FEATURED
     </span>
 
     <div className="h-px flex-1 bg-purple-200/60"></div>
@@ -371,7 +368,7 @@ export default function LandingPage({
                           flex items-center justify-center">
 
             <span className="text-[9px] sm:text-[11px] font-semibold
-                             text-purple-500 leading-tight px-1">
+                             text-purple-400 leading-tight px-1">
               NAIL TECH
               <br />
               BLUEPRINT
@@ -389,18 +386,18 @@ export default function LandingPage({
           Your Next Step
         </span>
 
-        <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-gray-800 mt-1">
+        <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-gray-500 mt-1">
           The Nail Tech Blueprint
         </h3>
 
-        <p className="text-xs sm:text-sm text-gray-500 mt-1 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-400 mt-1 leading-relaxed">
           A step-by-step roadmap to help you start, prepare, and build your
           nail-tech career with confidence.
         </p>
 
         <div className="flex items-center gap-3 mt-2">
 
-          <span className="text-sm sm:text-base font-semibold text-gray-800">
+          <span className="text-sm sm:text-base font-semibold text-gray-600">
             $99
           </span>
 
@@ -436,8 +433,8 @@ export default function LandingPage({
 
   </div>
 
-  <p className="text-center text-[9px] text-gray-400 mt-2 tracking-wide">
-    NAIL TECH BLUEPRINT
+  <p className="text-center text-[12px] text-gray-400 mt-1.5 tracking-wide">
+    The real career game plan
   </p>
 
 </section>
@@ -557,7 +554,7 @@ export default function LandingPage({
 
       <div className="h-px flex-1 bg-purple-200/60"></div>
 
-      <span className="text-[10px] tracking-[0.25em] uppercase text-purple-400 font-medium">
+      <span className="text-[10px] tracking-[0.25em] uppercase text-gray-400 font-medium">
         Featured
       </span>
 
@@ -575,7 +572,7 @@ export default function LandingPage({
       <div className="flex items-center justify-between mb-2">
 
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+          <h3 className="text-lg md:text-xl font-semibold text-gray-500">
             Nail Tech Essentials
           </h3>
 
@@ -773,7 +770,7 @@ export default function LandingPage({
                 "This literally saved me from making a $5K mistake. I thought I
                 was ready but the quiz showed me I needed to save more first."
               </p>
-
+s
               <p className="text-sm font-medium">— Jasmine, 23, Atlanta</p>
             </div>
 

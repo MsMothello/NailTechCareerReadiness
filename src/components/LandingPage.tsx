@@ -298,7 +298,7 @@ before realizing it wasn't the right move.
                     className="w-full h-[560px] object-cover"
                   />
                 </div>
-s
+
                 {/* Floating Quiz Card */}
 <div className="absolute -bottom-5 -left-3 md:-left-8 bg-white rounded-2xl shadow-xl px-5 py-3 max-w-[300px]">
                   <div className="flex items-center gap-3 mb-2">
@@ -368,7 +368,7 @@ s
                           flex items-center justify-center">
 
             <span className="text-[9px] sm:text-[11px] font-semibold
-                             text-purple-400 leading-tight px-1">
+                             text-purple-300 leading-tight px-1">
               NAIL TECH
               <br />
               BLUEPRINT
@@ -386,18 +386,18 @@ s
           Your Next Step
         </span>
 
-        <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-gray-500 mt-1">
+        <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-gray-400 mt-1">
           The Nail Tech Blueprint
         </h3>
 
-        <p className="text-xs sm:text-sm text-gray-400 mt-1 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-300 mt-1 leading-relaxed">
           A step-by-step roadmap to help you start, prepare, and build your
           nail-tech career with confidence.
         </p>
 
         <div className="flex items-center gap-3 mt-2">
 
-          <span className="text-sm sm:text-base font-semibold text-gray-600">
+          <span className="text-sm sm:text-base font-semibold text-gray-400">
             $99
           </span>
 
@@ -572,13 +572,13 @@ s
       <div className="flex items-center justify-between mb-2">
 
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-gray-500">
+          <h3 className="text-lg md:text-xl font-semibold text-gray-400">
             Nail Tech Essentials
           </h3>
 
         </div>
 
-        <span className="hidden sm:block text-xs text-gray-400">
+        <span className="hidden sm:block text-xs text-gray-300">
           Shop products for your nail journey
         </span>
 
@@ -683,20 +683,20 @@ s
 
               <div className="p-2">
 
-                <h4 className="font-semibold text-sm text-gray-800">
+                <h4 className="font-semibold text-sm text-gray-300">
                   {product.name}
                 </h4>
 
                 <div className="flex items-center justify-between mt-2">
 
-                  <span className="font-semibold text-sm text-purple-600">
+                  <span className="font-semibold text-sm text-purple-400">
                     {product.price}
                   </span>
 
                   <button
   className="px-3 py-1.5 rounded-full
              bg-gradient-to-r from-purple-200 to-purple-50
-             text-purple-400 text-xs font-medium
+             text-purple-300 text-xs font-medium
              shadow-sm shadow-purple-200/50
              hover:opacity-90 transition"
 >
@@ -748,71 +748,103 @@ s
 
 </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-12 px-2 mb-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-center text-xl md:text-2xl mb-5 text-gray-600">
-            What Others Are Saying
-          </h3>
+{/* TESTIMONIALS */}
+<section className="py-12 px-2 mb-4 bg-white">
+  <div className="max-w-6xl mx-auto">
 
-          <div className="grid md:grid-cols-3 gap-4">
-            {/* Testimonial 1 */}
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-400">
-                    ★
-                  </span>
-                ))}
-              </div>
+    <h3 className="text-center text-xl md:text-2xl mb-5 text-gray-600">
+      What Others Are Saying
+    </h3>
 
-              <p className="text-gray-700 mb-3 leading-relaxed">
-                "This literally saved me from making a $5K mistake. I thought I
-                was ready but the quiz showed me I needed to save more first."
-              </p>
-s
-              <p className="text-sm font-medium">— Jasmine, 23, Atlanta</p>
-            </div>
+    <div className="grid md:grid-cols-3 gap-4">
 
-            {/* Testimonial 2 */}
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-400">
-                    ★
-                  </span>
-                ))}
-              </div>
+      {/* Testimonial 1 */}
+      <div className="bg-gray-50 p-4 rounded-lg">
 
-              <p className="text-gray-700 mb-3 leading-relaxed">
-                "I scored Ready and it gave me so much confidence. Enrolled 2
-                weeks later and I'm so glad I went for it."
-              </p>
-
-              <p className="text-sm font-medium">— Maria, 26, Houston</p>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-400">
-                    ★
-                  </span>
-                ))}
-              </div>
-
-              <p className="text-gray-700 mb-3 leading-relaxed">
-                "Honestly didn't expect much from a free quiz but wow. Knowing
-                the real costs upfront changed everything for me."
-              </p>
-
-              <p className="text-sm font-medium">— Keyanna, 21, Phoenix</p>
-            </div>
-          </div>
+        <div className="flex gap-1 mb-2">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className="text-yellow-400">
+              ★
+            </span>
+          ))}
         </div>
-      </section>
 
+        <p className="text-gray-700 mb-3 leading-relaxed">
+          "This literally saved me from making a $5K mistake. I thought I
+          was ready but the quiz showed me I needed to save more first."
+        </p>
+
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-full bg-pink-600 flex items-center justify-center text-white text-sm font-medium">
+            J
+          </div>
+
+          <span className="text-sm text-gray-600">
+            Jasmine, 23, Atlanta
+          </span>
+        </div>
+
+      </div>
+
+      {/* Testimonial 2 */}
+      <div className="bg-gray-50 p-4 rounded-lg">
+
+        <div className="flex gap-1 mb-2">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className="text-yellow-400">
+              ★
+            </span>
+          ))}
+        </div>
+
+        <p className="text-gray-700 mb-3 leading-relaxed">
+          "I scored Ready and it gave me so much confidence. Enrolled 2
+          weeks later and I'm so glad I went for it."
+        </p>
+
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-sm font-medium">
+            M
+          </div>
+
+          <span className="text-sm text-gray-600">
+            Maria, 26, Houston
+          </span>
+        </div>
+
+      </div>
+
+      {/* Testimonial 3 */}
+      <div className="bg-gray-50 p-4 rounded-lg">
+
+        <div className="flex gap-1 mb-2">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className="text-yellow-500">
+              ★
+            </span>
+          ))}
+        </div>
+
+        <p className="text-gray-700 mb-3 leading-relaxed">
+          "Honestly didn't expect much from a free quiz but wow. Knowing
+          the real costs upfront changed everything for me."
+        </p>
+
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-full bg-purple-700 flex items-center justify-center text-white text-sm font-medium">
+            K
+          </div>
+
+          <span className="text-sm text-gray-600">
+            Keyanna, 21, Phoenix
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* FINAL CTA */}
       <section className="py-8 px-4 bg-gradient-to-b from-purple-600 to-pink-600 text-white">

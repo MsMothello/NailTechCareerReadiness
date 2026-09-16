@@ -36,7 +36,9 @@ type Stage =
   | "email-gate"
   | "reality-breakdown-content"
   | "detailed-report"
+  | "roadmap"
   | "blueprint";
+
 
 type EmailGateTarget = "reality-breakdown" | "detailed-report";
 
@@ -203,6 +205,7 @@ export default function App() {
       bonusSpots={bonusSpots}
       onStartQuiz={handleStartQuiz}
       onRealityBreakdown={() => handleAccessRealityBreakdown()}
+      onRoadmap={() => setStage("blueprint")}
     />
   );
 }

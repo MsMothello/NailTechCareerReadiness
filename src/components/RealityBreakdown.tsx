@@ -68,7 +68,7 @@ export default function RealityBreakdown({ onBack, onSubmit, quizResults }: Real
         setSubmitted(true);
         onSubmit?.(email);
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.');
     } finally {
       setLoading(false);

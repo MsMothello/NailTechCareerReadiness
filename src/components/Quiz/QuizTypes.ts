@@ -19,7 +19,7 @@ export type QuizQuestion = {
 };
 
 export type SectionResult = {
-  id: string;
+  sectionId: string;
   title: string;
   percentage: number;
   band: string;
@@ -29,8 +29,10 @@ export type SectionResult = {
 };
 
 export type QuizFlag = {
+  id: string;
   type: "critical" | "advisory";
-  sectionId: string;
+  sectionId?: string;
+  title: string;
   message: string;
   remedy?: string;
 };
@@ -38,12 +40,12 @@ export type QuizFlag = {
 export type QuizResults = {
   percentage: number;
   band: string;
-  bandName: string;
+  bandName?: string;
   headline: string;
   diagnostic: string;
-  cta: string;
   sectionResults: SectionResult[];
   triggeredFlags: QuizFlag[];
   worstSection?: SectionResult;
   bestSection?: SectionResult;
+  cta?: string;
 };

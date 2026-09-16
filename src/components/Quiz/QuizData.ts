@@ -1,4 +1,4 @@
-import { QuizSection, QuizOption } from "./quizTypes";
+import { QuizSection, QuizOption } from "./QuizTypes";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // NAIL TECH READINESS QUIZ — question bank

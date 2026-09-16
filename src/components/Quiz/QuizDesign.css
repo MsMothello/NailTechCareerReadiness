@@ -19,6 +19,51 @@
 }
 
 /* =========================
+   QUIZ NAVIGATION
+========================= */
+
+.quiz-design__navigation {
+  width: 100%;
+  max-width: 660px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto 10px;
+  padding: 0 4px;
+}
+
+.quiz-design__nav-button {
+  padding: 7px 10px;
+
+  border: none;
+  background: transparent;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #64748b;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.quiz-design__nav-button:hover:not(:disabled) {
+  color: #db2777;
+  transform: translateY(-1px);
+}
+
+.quiz-design__nav-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* =========================
    QUESTION CARD
 ========================= */
 
@@ -740,5 +785,57 @@
 
   .quiz-design__pill {
     align-self: flex-start;
+  }
+}
+/* =========================================
+   QUIZ NAVIGATION
+========================================= */
+
+.quiz-design__navigation {
+  width: 100%;
+  max-width: 660px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto 10px;
+  padding: 0 4px;
+
+  box-sizing: border-box;
+}
+
+.quiz-design__nav-button {
+  padding: 7px 10px;
+
+  border: none;
+  background: transparent;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #64748b;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.quiz-design__nav-button:hover:not(:disabled) {
+  color: #db2777;
+  transform: translateY(-1px);
+}
+
+.quiz-design__nav-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .quiz-design__navigation {
+    padding: 0 2px;
   }
 }

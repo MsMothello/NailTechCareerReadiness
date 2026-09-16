@@ -6,7 +6,7 @@ import {
   QuizQuestion,
   QuizResults,
   QuizOption,
-} from "./quizTypes";
+} from "./QuizTypes";
 
 type QuestionScreenProps = {
   question: QuizQuestion;
@@ -16,12 +16,16 @@ type QuestionScreenProps = {
   selectedAnswer?: string;
   onSelectAnswer: (answer: QuizOption) => void;
   onNext: () => void;
+  onBack?: () => void;
+  onHome?: () => void;
   isLastQuestion?: boolean;
   brandName?: string;
 };
 
 type ResultsScreenProps = {
   results: QuizResults;
+  onBack?: () => void;
+onHome?: () => void;
   onPrimaryCTA?: () => void;
   onReportCTA?: () => void;
   onProductCTA?: () => void;
@@ -45,6 +49,8 @@ export function QuizQuestionScreen({
   selectedAnswer,
   onSelectAnswer,
   onNext,
+  onBack,
+  onHome,
   isLastQuestion = false,
   brandName = "Career Readiness Quiz",
 }: QuestionScreenProps) {
@@ -61,6 +67,27 @@ export function QuizQuestionScreen({
         } as React.CSSProperties
       }
     >
+
+      <div className="quiz-design__navigation">
+  <button
+    type="button"
+    className="quiz-design__nav-button"
+    onClick={onBack}
+    disabled={!onBack || questionIndex === 0}
+  >
+    ← Back
+  </button>
+
+  <button
+    type="button"
+    className="quiz-design__nav-button"
+    onClick={onHome}
+    disabled={!onHome}
+  >
+    Home
+  </button>
+</div>
+
       <div className="quiz-design__card">
 
         <header className="quiz-design__header">
@@ -246,7 +273,7 @@ export function QuizResultsScreen({
 
             {sectionResults.map((section) => (
               <div
-                key={section.id}
+                key={section.title}
                 className="quiz-design__section-result"
               >
 

@@ -6,12 +6,14 @@ type LandingPageProps = {
   bonusSpots: number;
   onStartQuiz: () => void;
   onRealityBreakdown?: () => void;
+  onRoadmap?: () => void;
 };
 
 export default function LandingPage({
   takenToday,
   onStartQuiz,
   onRealityBreakdown,
+  onRoadmap,
 }: LandingPageProps) {
 
   const products = [
@@ -116,41 +118,33 @@ export default function LandingPage({
 
 {/* Navigation Links */}
 <div className="hidden md:flex items-center gap-7 ml-20 mr-16">
+  
+<button
+  onClick={onStartQuiz}
+  className="text-xs uppercase tracking-widest text-gray-500
+             hover:text-purple-600 transition"
+>
+  Career Quiz
+</button>
+
+ <button
+  onClick={onRealityBreakdown}
+  className="text-xs uppercase tracking-widest text-gray-500
+             hover:text-purple-600 transition"
+>
+  Reality Check
+</button>
+
+  <button
+  onClick={onRoadmap}
+  className="text-xs uppercase tracking-widest text-gray-500
+             hover:text-purple-600 transition"
+>
+  Roadmap
+</button>
 
   <a
-    href="#"
-    className="text-xs uppercase tracking-widest text-gray-500
-               hover:text-purple-600 transition"
-  >
-    Home
-  </a>
-
-  <a
-    href="#quiz"
-    className="text-xs uppercase tracking-widest text-gray-500
-               hover:text-purple-600 transition"
-  >
-    Career Quiz
-  </a>
-
-  <a
-    href="#reality"
-    className="text-xs uppercase tracking-widest text-gray-500
-               hover:text-purple-600 transition"
-  >
-    Reality Check
-  </a>
-
-  <a
-    href="#roadmap"
-    className="text-xs uppercase tracking-widest text-gray-500
-               hover:text-purple-600 transition"
-  >
-    Roadmap
-  </a>
-
-  <a
-    href="#shop"
+href="#product-scroll"
     className="text-xs uppercase tracking-widest text-gray-500
                hover:text-purple-600 transition"
   >
@@ -412,9 +406,8 @@ before realizing it wasn't the right move.
       {/* CTA */}
       <div className="flex-shrink-0">
 <button
-  onClick={() => {
-    // Add your Blueprint checkout/link here
-  }}
+  onClick={onRoadmap}
+
   className="px-4 sm:px-6 py-2.5 sm:py-3
              rounded-full
              bg-gradient-to-r from-purple-300 to-purple-50

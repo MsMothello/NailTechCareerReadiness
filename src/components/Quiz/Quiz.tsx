@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { QuizQuestionScreen, QuizResultsScreen } from "./QuizDesign";
 import { QuizPreviewReport } from "./QuizPreviewReport";
-import { SECTIONS, SectionId } from "./QuizData";
-import { buildQuiz, calcResults, NEXT_STEPS } from "./QuizLogic";
+import { SECTIONS, SectionId } from "./quizData";
+import { buildQuiz, calcResults, NEXT_STEPS } from "./quizLogic";
 import { buildPreview } from "./quizPreview";
-import { QuizQuestion, QuizOption, QuizResults as QuizResultsType } from "./quizTypes";
+import { QuizQuestion, QuizOption, QuizResults as QuizResultsType } from "./QuizTypes";
 
 type Screen = "quiz" | "preview" | "full";
 
@@ -89,6 +89,10 @@ export default function NailTechQuiz({
         selectedAnswer={answers[currentQuestion.id]}
         onSelectAnswer={handleSelectAnswer}
         onNext={handleNext}
+        onBack={() => {
+          setCurrentIndex((q) => Math.max(0, q - 1));
+        }}
+        onHome={() => setScreen("preview")}
         isLastQuestion={currentIndex === questions.length - 1}
         brandName={brandName}
       />
@@ -108,7 +112,7 @@ export default function NailTechQuiz({
   }
 
   if (screen === "full" && results) {
-    const worstId = (results.worstSection?.id as SectionId) || "money";
+    const worstId = (results.worstSection?.sectionId as SectionId) || "money";
     return (
       <QuizResultsScreen
         results={results}

@@ -1,6 +1,8 @@
 import { Suspense, lazy, useState } from "react";
 import LandingPage from "./components/LandingPage";
 import Quiz from "./components/Quiz/Quiz";
+import Account from "./components/Account/Account";
+import Shop from "./components/Shop/Shop";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const RealityBreakdown = lazy(() => import("./components/RealityBreakdown"));
@@ -37,7 +39,9 @@ type Stage =
   | "reality-breakdown-content"
   | "detailed-report"
   | "roadmap"
-  | "blueprint";
+  | "blueprint"
+  | "account"
+  | "shop";
 
 
 type EmailGateTarget = "reality-breakdown" | "detailed-report";
@@ -64,6 +68,7 @@ type QuizResults = {
 
 export default function App() {
   const [stage, setStage] = useState<Stage>("landing");
+  const [accountMode, setAccountMode] = useState<"login" | "signup">("login");
   const [quizResults, setQuizResults] = useState<QuizResults | null>(null);
   const [emailGateTarget, setEmailGateTarget] = useState<EmailGateTarget>("reality-breakdown");
   const [submittedEmail, setSubmittedEmail] = useState<string | null>(null);
@@ -123,6 +128,21 @@ export default function App() {
   if (stage === "quiz") {
     return <Quiz />;
   }
+
+if (stage === "account") {
+  return (
+    <Account
+      initialMode={accountMode}
+      onBack={() => setStage("landing")}
+    />
+  );
+}
+
+if (stage === "shop") {
+  return (
+    <Shop />
+  );
+}
 
   if (stage === "email-gate") {
     return (
@@ -204,8 +224,18 @@ export default function App() {
       takenToday={takenToday}
       bonusSpots={bonusSpots}
       onStartQuiz={handleStartQuiz}
+     onLogin={() => {
+  setAccountMode("login");
+  setStage("account");
+}}
+onShop={() => setStage("shop")}
+
       onRealityBreakdown={() => handleAccessRealityBreakdown()}
       onRoadmap={() => setStage("blueprint")}
+   onGetStarted={() => {
+  setAccountMode("signup");
+  setStage("account");
+}}
     />
   );
 }

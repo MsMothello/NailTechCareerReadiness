@@ -1,0 +1,485 @@
+/* ShopDesign.css
+   Purple/pink "orchid" gradient theme. Styles for the reusable
+   components in ShopDesign.tsx. Class names are prefixed with "shop-"
+   to avoid collisions with the rest of your app. */
+
+.shop-section {
+  padding: 32px 0;
+}
+
+.shop-section__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a6a9a;
+  margin: 0 0 16px;
+}
+
+.shop-section__label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #c0479a, #7b5fe0);
+  display: inline-block;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Full-screen row: 3 cards span the entire viewport width and height,
+   like a landing slide. Break out of any parent max-width container. */
+.shop-grid--fullscreen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100vw;
+  height: 100vh;
+  margin-left: calc(50% - 50vw);
+  gap: 0;
+}
+.shop-grid--fullscreen .shop-card {
+  border-radius: 0;
+  border-top: none;
+  border-bottom: none;
+  height: 100%;
+}
+.shop-grid--fullscreen .shop-card:not(:last-child) {
+  border-right: 1px solid #eee0f2;
+}
+.shop-grid--fullscreen .shop-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .shop-grid--fullscreen {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .shop-grid--fullscreen .shop-card {
+    height: 70vh;
+  }
+}
+
+/* ---------- Navbar ---------- */
+.shop-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #eee0f2;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.shop-navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.shop-navbar__logo {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: 17px;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: linear-gradient(90deg, #c0479a, #7b5fe0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.shop-navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a6a9a;
+  flex: 1;
+}
+
+.shop-navbar__links span {
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.shop-navbar__links span:hover {
+  color: #a83e88;
+}
+
+.shop-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.shop-navbar__icon-btn {
+  position: relative;
+  display: inline-flex;
+  background: none;
+  border: none;
+  color: #8a6a9a;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.15s ease;
+}
+.shop-navbar__icon-btn:hover {
+  color: #a83e88;
+}
+
+.shop-navbar__badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: linear-gradient(90deg, #c0479a, #7b5fe0);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50%;
+  min-width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+@media (max-width: 720px) {
+  .shop-navbar__links {
+    display: none;
+  }
+}
+
+/* ---------- Button ---------- */
+.shop-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+.shop-btn:active {
+  transform: scale(0.97);
+}
+
+.shop-btn--md {
+  font-size: 13px;
+  padding: 9px 18px;
+  min-height: 36px;
+}
+.shop-btn--lg {
+  font-size: 15px;
+  padding: 13px 28px;
+  min-height: 48px;
+}
+
+.shop-btn--primary {
+  background: linear-gradient(90deg, #c0479a, #7b5fe0);
+  color: #ffffff;
+}
+.shop-btn--primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(123, 95, 224, 0.25);
+}
+
+.shop-btn--secondary {
+  background: #f0eafb;
+  color: #8a6a9a;
+}
+.shop-btn--secondary:hover {
+  background: #e7dff9;
+  transform: translateY(-2px);
+}
+
+/* ---------- Badge ---------- */
+.shop-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  width: fit-content;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+
+/* ---------- Product card ---------- */
+.shop-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #eee0f2;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  text-align: left;
+  cursor: pointer;
+}
+.shop-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(123, 95, 224, 0.1);
+  border-color: rgba(192, 71, 154, 0.35);
+}
+.shop-card--featured {
+  border-color: #c0479a;
+  box-shadow: 0 4px 12px rgba(192, 71, 154, 0.12);
+}
+
+.shop-card__media {
+  position: relative;
+  aspect-ratio: 1;
+  background: linear-gradient(160deg, #faf0fa, #f0eafb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop-card--coming-soon .shop-card__media {
+  opacity: 0.7;
+}
+
+/* Inside a fullscreen row the card is a flex column filling 100% height,
+   so the media area grows to take up remaining space instead of staying
+   a fixed square. */
+.shop-grid--fullscreen .shop-card {
+  display: flex;
+  flex-direction: column;
+}
+.shop-grid--fullscreen .shop-card__media {
+  aspect-ratio: auto;
+  flex: 1;
+}
+.shop-grid--fullscreen .shop-card__body {
+  flex: none;
+}
+
+/* Size variant: lg is used for the second, "look again, bigger" row */
+.shop-card--lg .shop-card__body {
+  padding: 28px;
+}
+.shop-card--lg .shop-card__name {
+  font-size: 20px;
+}
+.shop-card--lg .shop-card__desc {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.shop-card--lg .shop-card__price {
+  font-size: 18px;
+}
+.shop-card--lg .shop-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+.shop-card--lg .shop-btn {
+  font-size: 14px;
+  padding: 11px 22px;
+}
+
+.shop-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 14px;
+}
+
+.shop-card__name {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  margin: 0 0 3px;
+  color: #2e2138;
+}
+
+.shop-card__desc {
+  color: #8a6a9a;
+  font-size: 12.5px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.shop-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.shop-card__price {
+  font-weight: 600;
+  font-size: 14px;
+  color: #a83e88;
+}
+.shop-card__price--muted {
+  color: #b98fc4;
+  font-size: 12.5px;
+  font-weight: 400;
+}
+
+/* ---------- Product detail (single-product page) ---------- */
+.shop-detail {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.shop-detail__back {
+  background: none;
+  border: none;
+  color: #8a6a9a;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 24px;
+  transition: color 0.15s ease;
+}
+.shop-detail__back:hover {
+  color: #a83e88;
+}
+
+.shop-detail__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.shop-detail__media {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #faf0fa, #f0eafb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-detail__name {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: #2e2138;
+  margin: 0 0 12px;
+}
+
+.shop-detail__desc {
+  color: #8a6a9a;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 42ch;
+}
+
+.shop-detail__price {
+  font-weight: 600;
+  font-size: 22px;
+  color: #a83e88;
+  margin: 0 0 24px;
+}
+.shop-detail__price--muted {
+  color: #b98fc4;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 720px) {
+  .shop-detail__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ---------- Coming soon bar (fixed footer carousel) ---------- */
+.shop-comingsoon-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border-top: 1px solid #eee0f2;
+  box-shadow: 0 -4px 16px rgba(123, 95, 224, 0.08);
+  padding: 12px 20px;
+}
+
+.shop-comingsoon-bar__label {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a6a9a;
+  padding-right: 16px;
+  border-right: 1px solid #eee0f2;
+}
+
+.shop-comingsoon-bar__track {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 2px;
+}
+.shop-comingsoon-bar__track::-webkit-scrollbar {
+  height: 4px;
+}
+.shop-comingsoon-bar__track::-webkit-scrollbar-thumb {
+  background: #eee0f2;
+  border-radius: 4px;
+}
+
+.shop-comingsoon-bar__item {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #faf5fc;
+  border: 1px solid #eee0f2;
+  border-radius: 999px;
+  padding: 6px 14px 6px 8px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.shop-comingsoon-bar__item:hover {
+  border-color: #c0479a;
+  background: #f6ecf9;
+}
+.shop-comingsoon-bar__item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.shop-comingsoon-bar__item-name {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #2e2138;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .shop-comingsoon-bar__label {
+    display: none;
+  }
+}

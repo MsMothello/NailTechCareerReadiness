@@ -7,6 +7,9 @@ type LandingPageProps = {
   onStartQuiz: () => void;
   onRealityBreakdown?: () => void;
   onRoadmap?: () => void;
+  onLogin?: () => void;
+  onGetStarted?: () => void;
+  onShop?: () => void;
 };
 
 export default function LandingPage({
@@ -14,6 +17,9 @@ export default function LandingPage({
   onStartQuiz,
   onRealityBreakdown,
   onRoadmap,
+  onLogin,
+  onGetStarted,
+  onShop,
 }: LandingPageProps) {
 
   const products = [
@@ -135,37 +141,37 @@ export default function LandingPage({
   Reality Check
 </button>
 
-  <button
-  onClick={onRoadmap}
-  className="text-xs uppercase tracking-widest text-gray-500
-             hover:text-purple-600 transition"
->
-  Roadmap
-</button>
-
   <a
-href="#product-scroll"
+    href="#roadmap"
+    onClick={onRoadmap}
     className="text-xs uppercase tracking-widest text-gray-500
                hover:text-purple-600 transition"
   >
-    Shop
+    Roadmap
+  </a>
 
-        </a>
+<button
+  onClick={onShop}
+  className="text-xs uppercase tracking-widest text-gray-500
+             hover:text-purple-600 transition"
+>
+  Shop
+</button>
 
       </div>
 
       {/* Right Side */}
       <div className="flex items-center gap-5">
-
-        <a
-          href="#login"
-          className="hidden sm:block text-xs uppercase tracking-widest
-                     text-gray-500 hover:text-purple-600"
-        >
-          Log In
-        </a>
+<button
+  onClick={onLogin}
+  className="hidden sm:block text-xs uppercase tracking-widest
+             text-gray-500 hover:text-purple-600 transition"
+>
+  Log In
+</button>
 
         <button
+          onClick={onGetStarted}
           className="px-5 py-2.5 border border-purple-300
                      rounded-full text-xs uppercase tracking-wider
                      text-purple-600 hover:bg-purple-50 transition"
@@ -406,8 +412,9 @@ before realizing it wasn't the right move.
       {/* CTA */}
       <div className="flex-shrink-0">
 <button
-  onClick={onRoadmap}
-
+  onClick={() => {
+    // Add your Blueprint checkout/link here
+  }}
   className="px-4 sm:px-6 py-2.5 sm:py-3
              rounded-full
              bg-gradient-to-r from-purple-300 to-purple-50
